@@ -168,38 +168,6 @@ button {
   }
 }
 
-// Aside
-.left-fixed {
-  color: var(--color-secondary);
-  width: 40px;
-  position: fixed;
-  bottom: 0px;
-  left: 40px;
-  right: auto;
-  z-index: 10;
-  .links-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  a {
-    padding: 10px;
-    &:hover {
-      transform: translateY(-3px);
-    }
-  }
-
-  li:last-of-type {
-    margin-bottom: 20px;
-  }
-  &::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0px auto;
-  }
-}
 .right-fixed {
   font-size: var(--font-size-xxs);
   font-family: var(--font-mono);
