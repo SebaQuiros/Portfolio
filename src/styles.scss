@@ -168,39 +168,6 @@ button {
   }
 }
 
-// Page Content Styles
-// Header
-header {
-  font-size: var(--font-size-xs);
-  position: fixed;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 90px;
-  padding: 0 50px;
-  background-color: rgba(10, 25, 47, 0.85);
-  z-index: 11;
-  box-shadow: var(--box-shadow-1);
-  .logo {
-    margin-right: auto;
-    .img-logo {
-      height: 50px;
-    }
-  }
-  .nav-links li {
-    font-family: var(--font-mono);
-    display: inline-block;
-    padding: 8px 12px;
-    span {
-      color: var(--color-highlight);
-    }
-  }
-  .header-btn {
-    margin-left: 15px;
-  }
-}
-
 // Aside
 .left-fixed {
   color: var(--color-secondary);
