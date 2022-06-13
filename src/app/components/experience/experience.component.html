@@ -5,102 +5,28 @@
   </div>
   <div class="inner">
     <div class="xp-tablist">
-      <button class="btn-tab active" data-switcher-xp data-tab="1">
-        Fundación IDA
+      <button class="btn-tab active">
+        {{ experience.button }}
       </button>
-      <button class="btn-tab" data-switcher-xp data-tab="2">Dimension</button>
-      <button class="btn-tab" data-switcher-xp data-tab="3">
-        Bruto Estudio
-      </button>
-      <button class="btn-tab" data-switcher-xp data-tab="4">All Access</button>
     </div>
     <div class="xp-panel">
-      <div class="panel-content active" data-panel="1">
+      <div class="panel-content active">
         <h3>
-          Voluntario en
+          {{ experience.role }}
           <a
             class="in-text"
             href="https://www.fundacionida.org/"
             target="_blank"
-            >Fundación IDA
+            >{{ experience.title }}
           </a>
         </h3>
-        <div class="panel-subtitle">Investigación en Diseño Argentino</div>
-        <span>Enero 2021 - Marzo 2022</span>
-        <ul class="panel-list bullet-list">
-          <li>
-            Encargado del área de arquitectura para la obtención, recepción y
-            catalogación de material nuevo.
-          </li>
-          <li>
-            Investigador para el proyecto "Épica. Hazañas del diseño argentino."
-          </li>
-        </ul>
-      </div>
-      <div class="panel-content" data-panel="2">
-        <h3>
-          Diseñador en
-          <a
-            class="in-text"
-            href="https://www.instagram.com/dimension.arg/"
-            target="_blank"
-            >Dimension</a
-          >
-        </h3>
-        <div class="panel-subtitle">Fábrica de impresión 3D</div>
-        <span>Enero - Junio 2021</span>
-        <ul class="panel-list bullet-list">
-          <li>Trabajo con tecnología de impresión 3D.</li>
-          <li>
-            Responsable del proceso de lanzamiento de nuevos productos. Diseño,
-            pruebas y cotización.
-          </li>
-          <li>Producción y mantenimiento en el día a día.</li>
-        </ul>
-      </div>
-      <div class="panel-content" data-panel="3">
-        <h3>
-          Dibujante en
-          <a
-            class="in-text"
-            href="https://www.instagram.com/bruto.arquitectos/"
-            target="_blank"
-            >Bruto Estudio</a
-          >
-        </h3>
-        <div class="panel-subtitle">Estudio de Arquitectura</div>
-        <span>Abril 2018 - Agosto 2019</span>
-        <ul class="panel-list bullet-list">
-          <li>
-            Documentación de todas las etapas de proyecto: de cumplimiento
-            reglamentario, de licitación y cotización de obra y ejecutiva para
-            obra.
-          </li>
-          <li>
-            Trabajo en estudio con documentación, modelado virtual y
-            renderizado.
-          </li>
-          <li>
-            Visitas a obra como parte de la dirección para el control de tareas.
-          </li>
-        </ul>
-      </div>
-      <div class="panel-content" data-panel="4">
-        <h3>
-          Empleado en
-          <a
-            class="in-text"
-            href="https://www.allaccess.com.ar/"
-            target="_blank"
-            >All Access</a
-          >
-        </h3>
-        <div class="panel-subtitle">Empresa de eventos y festivales</div>
-        <span>Enero - Abril 2018</span>
-        <ul class="panel-list bullet-list">
-          <li>Venta de entradas para el Loollapalooza.</li>
-          <li>Atención al público en español e inglés.</li>
-          <li>Soporte en línea post evento, reclamos y reembolsos.</li>
+        <div class="panel-subtitle">{{ experience.subtitle }}</div>
+        <span>{{ experience.time }}</span>
+        <ul
+          class="panel-list bullet-list"
+          *ngFor="let paragraph of experience.description"
+        >
+          <li>{{ paragraph }}</li>
         </ul>
       </div>
     </div>
