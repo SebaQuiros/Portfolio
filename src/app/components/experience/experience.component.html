@@ -4,26 +4,31 @@
     <h2>Experiencia</h2>
   </div>
   <div class="inner">
-    <div class="xp-tablist">
-      <button class="btn-tab" *ngFor="let experience of experiences">
+    <div class="tablist">
+      <button
+        type="button"
+        class="btn-tab"
+        [class.active]="experience === selectedExperience"
+        *ngFor="let experience of experiences"
+        (click)="onSelect(experience)"
+      >
         {{ experience.button }}
       </button>
     </div>
-    <div class="xp-panel">
-      <div class="panel-content" *ngFor="let experience of experiences">
+    <div class="panel">
+      <div class="panel-content" *ngIf="selectedExperience">
         <h3>
-          {{ experience.role }}
-          <a class="in-text" [href]="experience.link" target="_blank"
-            >{{ experience.title }}
+          {{ selectedExperience.role }}
+          <a class="in-text" [href]="selectedExperience.link" target="_blank"
+            >{{ selectedExperience.title }}
           </a>
         </h3>
-        <div class="panel-subtitle">{{ experience.subtitle }}</div>
-        <span>{{ experience.time }}</span>
-        <ul
-          class="panel-list bullet-list"
-          *ngFor="let paragraph of experience.description"
-        >
-          <li>{{ paragraph }}</li>
+        <div class="panel-subtitle">{{ selectedExperience.subtitle }}</div>
+        <span>{{ selectedExperience.time }}</span>
+        <ul class="panel-list bullet-list">
+          <li *ngFor="let paragraph of selectedExperience.description">
+            {{ paragraph }}
+          </li>
         </ul>
       </div>
     </div>

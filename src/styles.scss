@@ -210,25 +210,21 @@ section {
   max-width: 700px;
   .inner {
     display: flex;
-    .xp-tablist,
+    .tablist,
     .edu-tablist {
       font-size: var(--font-size-xs);
       position: relative;
       z-index: 3;
       width: max-content;
     }
-    .xp-panel,
+    .panel,
     .edu-panel {
       margin-left: 20px;
       .panel-content {
         width: 100%;
         height: auto;
         padding: 10px 5px;
-        display: none;
         transition: var(--transition-general);
-        &.active {
-          display: block;
-        }
         h3 {
           font-size: 22px;
           margin: 0px;

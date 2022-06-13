@@ -13,4 +13,9 @@ export class ExperienceComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  selectedExperience: Experience = EXPERIENCES[0];
+  onSelect(experience: Experience): void {
+    this.selectedExperience = experience;
+  }
 }
