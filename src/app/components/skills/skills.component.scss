@@ -1,0 +1,55 @@
+#sec-04-skills {
+  max-width: 900px;
+  .inner {
+    .skill-set {
+      &:not(:last-of-type) {
+        margin-bottom: 50px;
+      }
+      .set-title {
+        margin-bottom: 20px;
+        span {
+          font-family: var(--font-mono);
+          font-size: var(--font-size-xs);
+          color: var(--color-highlight);
+        }
+        h3 {
+          font-size: 28px;
+          margin-top: 10px;
+        }
+      }
+      .set-content {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        .set-description {
+          box-shadow: var(--box-shadow-1);
+          padding: 25px;
+          border-radius: var(--border-radius-sm);
+          background-color: var(--color-elements);
+          color: var(--color-secondary);
+          font-size: var(--font-size-md);
+          p {
+            margin: 0px;
+          }
+        }
+        .set-list {
+          font-size: var(--font-size-xs);
+          color: var(--color-secondary);
+          position: relative;
+          padding-left: 30px;
+          padding-left: 18px;
+          margin-top: 20px;
+          overflow: hidden;
+          li {
+            margin-bottom: 10px;
+          }
+          li::before {
+            position: relative;
+            left: -18px;
+          }
+        }
+      }
+    }
+  }
+}

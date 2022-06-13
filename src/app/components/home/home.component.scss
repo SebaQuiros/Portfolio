@@ -1,0 +1,28 @@
+#sec-00-home {
+  min-height: 100vh;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  .home-intro {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-highlight);
+  }
+  h1 {
+    font-size: var(--font-size-xxl);
+  }
+  .home-subtitle {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-heavy);
+    color: var(--color-secondary);
+  }
+  p {
+    font-size: var(--font-size-lg);
+    color: var(--color-secondary);
+    max-width: 540px;
+  }
+  > a {
+    margin-top: 50px;
+  }
+}
