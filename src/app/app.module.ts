@@ -26,13 +26,10 @@ import { ProyectsComponent } from './components/proyects/proyects.component';
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
-    ProyectsComponent
+    ProyectsComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
