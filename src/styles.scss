@@ -210,15 +210,13 @@ section {
   max-width: 700px;
   .inner {
     display: flex;
-    .tablist,
-    .edu-tablist {
+    .tablist {
       font-size: var(--font-size-xs);
       position: relative;
       z-index: 3;
       width: max-content;
     }
-    .panel,
-    .edu-panel {
+    .panel {
       margin-left: 20px;
       .panel-content {
         width: 100%;
