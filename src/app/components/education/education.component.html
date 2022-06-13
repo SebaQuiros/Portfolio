@@ -4,87 +4,30 @@
     <h2>Educación</h2>
   </div>
   <div class="inner">
-    <div class="edu-tablist">
-      <button class="btn-tab active" data-switcher-edu data-tab="1">
-        Diseño Industrial
-      </button>
-      <button class="btn-tab" data-switcher-edu data-tab="2">
-        Arquitectura
-      </button>
-      <button class="btn-tab" data-switcher-edu data-tab="3">
-        Colegio Secundario
+    <div class="tablist">
+      <button
+        type="button"
+        class="btn-tab"
+        [class.active]="education === selectedEducation"
+        *ngFor="let education of educations"
+        (click)="onSelect(education)"
+      >
+        {{ education.button }}
       </button>
     </div>
-    <div class="edu-panel">
-      <div class="panel-content active" data-panel="1">
+    <div class="panel">
+      <div class="panel-content" *ngIf="selectedEducation">
         <h3>
-          Carrera de
-          <a
-            class="in-text"
-            href="https://www.fadu.uba.ar/categoria/53-diseo-industrial"
-            target="_blank"
-            >Diseño Industrial</a
-          >
+          {{ selectedEducation.role }}
+          <a class="in-text" [href]="selectedEducation.link" target="_blank"
+            >{{ selectedEducation.title }}
+          </a>
         </h3>
-        <div class="panel-subtitle">FADU, Universidad de Buenos Aires</div>
-        <span>2021 - 2022</span>
+        <div class="panel-subtitle">{{ selectedEducation.subtitle }}</div>
+        <span>{{ selectedEducation.time }}</span>
         <ul class="panel-list bullet-list">
-          <li>
-            Encargado del área de arquitectura para la obtención, recepción y
-            catalogación de material nuevo.
-          </li>
-          <li>
-            Investigador para el proyecto "Épica. Hazañas del diseño argentino."
-          </li>
-        </ul>
-      </div>
-      <div class="panel-content" data-panel="2">
-        <h3>
-          Carrera de
-          <a
-            class="in-text"
-            href="https://www.fadu.uba.ar/categoria/49-arquitectura"
-            target="_blank"
-            >Arquitectura</a
-          >
-        </h3>
-        <div class="panel-subtitle">FADU, Universidad de Buenos Aires</div>
-        <span>2015 - Presente</span>
-        <ul class="panel-list bullet-list">
-          <li>Trabajo con tecnología de impresión 3D.</li>
-          <li>
-            Responsable del proceso de lanzamiento de nuevos productos. Diseño,
-            pruebas y cotización.
-          </li>
-          <li>Producción y mantenimiento en el día a día.</li>
-        </ul>
-      </div>
-      <div class="panel-content" data-panel="3">
-        <h3>
-          Secundario en el
-          <a
-            class="in-text"
-            href="http://sitio.marianista.edu.ar/"
-            target="_blank"
-            >Colegio Marianista</a
-          >
-        </h3>
-        <div class="panel-subtitle">
-          Bachiller en Humanidades y Ciencias Sociales
-        </div>
-        <span>2010 - 2014</span>
-        <ul class="panel-list bullet-list">
-          <li>
-            Documentación de todas las etapas de proyecto: de cumplimiento
-            reglamentario, de licitación y cotización de obra y ejecutiva para
-            obra.
-          </li>
-          <li>
-            Trabajo en estudio con documentación, modelado virtual y
-            renderizado.
-          </li>
-          <li>
-            Visitas a obra como parte de la dirección para el control de tareas.
+          <li *ngFor="let paragraph of selectedEducation.description">
+            {{ paragraph }}
           </li>
         </ul>
       </div>
