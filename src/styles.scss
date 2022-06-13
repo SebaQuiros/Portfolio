@@ -168,40 +168,6 @@ button {
   }
 }
 
-.right-fixed {
-  font-size: var(--font-size-xxs);
-  font-family: var(--font-mono);
-  color: var(--color-secondary);
-  width: 40px;
-  position: fixed;
-  bottom: 0px;
-  left: auto;
-  right: 40px;
-  z-index: 10;
-  .mail-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    a {
-      font-weight: var(--font-weight-light);
-      margin: 20px auto;
-      padding: 10px;
-      letter-spacing: 3px;
-      writing-mode: vertical-rl;
-      &:hover {
-        transform: translateY(-3px);
-      }
-    }
-  }
-  &::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0px auto;
-  }
-}
-
 // Main
 main {
   display: block;
