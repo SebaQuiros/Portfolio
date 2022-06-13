@@ -5,18 +5,15 @@
   </div>
   <div class="inner">
     <div class="xp-tablist">
-      <button class="btn-tab active">
+      <button class="btn-tab" *ngFor="let experience of experiences">
         {{ experience.button }}
       </button>
     </div>
     <div class="xp-panel">
-      <div class="panel-content active">
+      <div class="panel-content" *ngFor="let experience of experiences">
         <h3>
           {{ experience.role }}
-          <a
-            class="in-text"
-            href="https://www.fundacionida.org/"
-            target="_blank"
+          <a class="in-text" [href]="experience.link" target="_blank"
             >{{ experience.title }}
           </a>
         </h3>
