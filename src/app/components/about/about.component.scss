@@ -25,7 +25,6 @@
           &::after {
             top: 10px;
             left: 10px;
-            border: 2px solid var(--color-highlight);
           }
         }
         // Frame
@@ -37,7 +36,7 @@
           height: 100%;
           border-radius: var(--border-radius-sm);
           transition: var(--transition-general);
-          border: 2px solid var(--color-highlight-transparent);
+          border: 2px solid var(--color-highlight);
           top: 20px;
           left: 20px;
           z-index: -1;
