@@ -4,66 +4,19 @@
     <h2>Habilidades</h2>
   </div>
   <div class="inner">
-    <div class="skill-set">
+    <div class="skill-set" *ngFor="let skillSet of skills">
       <div class="set-title">
-        <span>Relacionadas con</span>
-        <h3>Programación y desarrollo</h3>
+        <span>{{ skillSet.type }}</span>
+        <h3>{{ skillSet.title }}</h3>
       </div>
       <div class="set-content">
         <div class="set-description">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            voluptas corporis nemo quas illo.
+            {{ skillSet.description }}
           </p>
         </div>
         <ul class="set-list bullet-list">
-          <li>HTML 5</li>
-          <li>CSS / SCSS</li>
-          <li>JavaScript (ES6+)</li>
-          <li>TypeScript</li>
-          <li>Ruby</li>
-          <li>Angular</li>
-        </ul>
-      </div>
-    </div>
-    <div class="skill-set">
-      <div class="set-title">
-        <span>Relacionadas con</span>
-        <h3>Arquitectura y Diseño</h3>
-      </div>
-      <div class="set-content">
-        <div class="set-description">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-            voluptas corporis nemo quas illo.
-          </p>
-        </div>
-        <ul class="set-list bullet-list">
-          <li>HTML 5</li>
-          <li>CSS / SCSS</li>
-          <li>JavaScript (ES6+)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="skill-set">
-      <div class="set-title">
-        <span>Relacionadas con</span>
-        <h3>Trabajo y toma de decisiones</h3>
-      </div>
-      <div class="set-content">
-        <div class="set-description">
-          <p>
-            Mis experiencias laborales en distintos ámbitos y la participación
-            en numerosos proyectos académicos me han permitido desarrollar
-            muchas habilidades de trabajo. Descubrí que tengo una tendencia al
-            liderazgo y disfruto del trabajo en equipo comprometido y
-            participativo.
-          </p>
-        </div>
-        <ul class="set-list bullet-list">
-          <li>Liderazgo</li>
-          <li>Iniciativa</li>
-          <li>Compromiso</li>
+          <li *ngFor="let tool of skillSet.tools">{{ tool }}</li>
         </ul>
       </div>
     </div>
