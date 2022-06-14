@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 
 import { Experience } from 'src/app/interfaces/experience';
 import { EXPERIENCES } from 'src/app/mock-experiences';
