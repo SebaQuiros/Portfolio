@@ -23,6 +23,7 @@
   }
   &::after {
     content: "";
+    background-color: var(--color-decorations);
     display: block;
     width: 1px;
     height: 90px;

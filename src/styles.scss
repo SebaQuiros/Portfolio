@@ -119,12 +119,6 @@ li {
   text-decoration: none;
 }
 
-// General class Styles
-::before,
-::after {
-  background-color: var(--color-decorations);
-}
-
 // Button Syles
 button {
   cursor: pointer;
