@@ -190,6 +190,7 @@ section {
     }
     &::after {
       content: "";
+      background-color: var(--color-decorations);
       display: block;
       position: relative;
       top: -10px;
