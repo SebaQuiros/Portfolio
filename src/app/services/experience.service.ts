@@ -1,19 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 
 import { Experience } from 'src/app/interfaces/experience';
-import { EXPERIENCES } from 'src/app/mock-experiences';
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+  }),
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class ExperienceService {
-  constructor() {}
+  private experiencesUrl = 'http://localhost:5000/experiences';
+  constructor(private http: HttpClient) {}
 
   getExperiences(): Observable<Experience[]> {
-    const experiences = of(EXPERIENCES);
-    return experiences;
+    return this.http.get<Experience[]>(this.experiencesUrl);
   }
 }
