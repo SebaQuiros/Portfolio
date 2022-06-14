@@ -56,9 +56,9 @@
             display: block;
             position: static;
             transition: var(--transition-general);
-            filter: grayscale(80%);
+            filter: grayscale(100%);
             &:hover {
-              filter: grayscale(10%);
+              filter: grayscale(0%);
             }
           }
         }

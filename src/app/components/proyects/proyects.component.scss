@@ -73,12 +73,6 @@
             height: 100%;
             border-radius: var(--border-radius-sm);
             vertical-align: middle;
-            &:hover {
-              background-color: transparent;
-              .img-wrapper {
-                filter: none;
-              }
-            }
             .img-wrapper {
               border-radius: var(--border-radius-sm);
               width: 100%;
@@ -91,11 +85,11 @@
                 border-radius: var(--border-radius-sm);
                 max-width: 100%;
                 display: block;
-                // position: static;
+                position: static;
                 transition: var(--transition-general);
-                filter: grayscale(80%);
+                filter: grayscale(100%);
                 &:hover {
-                  filter: grayscale(10%);
+                  filter: grayscale(0%);
                 }
               }
             }
