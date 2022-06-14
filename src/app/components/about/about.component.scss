@@ -18,14 +18,16 @@
         position: relative;
         width: 100%;
         border-radius: var(--border-radius-sm);
+        background-color: var(--color-grey-5);
         &:hover {
-          background-color: var(--color-grey-2);
+          background-color: var(--color-grey-4);
           &::after {
             top: 10px;
             left: 10px;
           }
         }
         // Frame
+
         &::after {
           content: "";
           display: block;
@@ -61,6 +63,11 @@
             max-width: 100%;
             display: block;
             position: static;
+            transition: var(--transition-general);
+            filter: grayscale(100%);
+            &:hover {
+              filter: grayscale(0);
+            }
           }
         }
       }
