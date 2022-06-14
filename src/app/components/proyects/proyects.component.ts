@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Proyect } from 'src/app/interfaces/proyect';
-import { PROYECTS } from 'src/app/mock-proyects';
+import { ProyectsService } from 'src/app/services/proyects.service';
 
 @Component({
   selector: 'app-proyects',
@@ -9,8 +9,17 @@ import { PROYECTS } from 'src/app/mock-proyects';
   styleUrls: ['./proyects.component.scss'],
 })
 export class ProyectsComponent implements OnInit {
-  proyects = PROYECTS;
-  constructor() {}
+  proyects: Proyect[] = [];
 
-  ngOnInit(): void {}
+  constructor(private proyectService: ProyectsService) {}
+
+  ngOnInit(): void {
+    this.getProyects();
+  }
+
+  getProyects() {
+    this.proyectService
+      .getProyects()
+      .subscribe((proyects) => (this.proyects = proyects));
+  }
 }
