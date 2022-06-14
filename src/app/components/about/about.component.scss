@@ -11,23 +11,24 @@
     .about-img {
       position: relative;
       max-width: 300px;
-      .img-wrapper {
+      .img-background {
         box-shadow: var(--box-shadow-1);
         transition: var(--transition-general);
         display: block;
         position: relative;
         width: 100%;
         border-radius: var(--border-radius-sm);
-        background-color: var(--color-grey-5);
+        background-color: var(--color-background);
         &:hover {
           background-color: var(--color-grey-4);
+          // Frame
           &::after {
             top: 10px;
             left: 10px;
+            border: 2px solid var(--color-highlight);
           }
         }
         // Frame
-
         &::after {
           content: "";
           display: block;
@@ -36,19 +37,10 @@
           height: 100%;
           border-radius: var(--border-radius-sm);
           transition: var(--transition-general);
-        }
-        &::before {
-          top: 0px;
-          left: 0px;
-          background-color: var(--color-highlight);
-          mix-blend-mode: screen;
-        }
-        &::after {
-          border: 2px solid var(--color-highlight);
+          border: 2px solid var(--color-highlight-transparent);
           top: 20px;
           left: 20px;
           z-index: -1;
-          background-color: transparent;
         }
         .my-image {
           position: relative;
