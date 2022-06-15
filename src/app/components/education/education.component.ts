@@ -9,12 +9,13 @@ import { EDUCATIONS } from 'src/app/mock-educations';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
-  educations = EDUCATIONS;
+  educations: Education[] = EDUCATIONS;
+  selectedEducation: Education = EDUCATIONS[0];
+
   constructor() {}
 
   ngOnInit(): void {}
 
-  selectedEducation: Education = EDUCATIONS[0];
   onSelect(experience: Education): void {
     this.selectedEducation = experience;
   }
