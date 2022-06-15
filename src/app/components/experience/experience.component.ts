@@ -10,7 +10,7 @@ import { ExperienceService } from 'src/app/services/experience.service';
 })
 export class ExperienceComponent implements OnInit {
   experiences: Experience[] = [];
-  selectedExperience: Experience = this.experiences[0];
+  selectedExperience?: Experience;
 
   constructor(private experienceService: ExperienceService) {}
 
@@ -19,9 +19,10 @@ export class ExperienceComponent implements OnInit {
   }
 
   getExperiences() {
-    this.experienceService
-      .getExperiences()
-      .subscribe((experiences) => (this.experiences = experiences));
+    this.experienceService.getExperiences().subscribe((experiences) => {
+      this.experiences = experiences;
+      this.selectedExperience = experiences[0];
+    });
   }
 
   onSelect(experience: Experience): void {
