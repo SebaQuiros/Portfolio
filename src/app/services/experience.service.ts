@@ -22,4 +22,8 @@ export class ExperienceService {
   getExperiences(): Observable<Experience[]> {
     return this.http.get<Experience[]>(this.experiencesUrl);
   }
+
+  // getFirstExperience(): Observable<Experience> {
+  //   return this.http.get<Experience>(this.experiencesUrl[0]);
+  // }
 }
