@@ -14,6 +14,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectsComponent } from './components/proyects/proyects.component';
+import { SectionTitleComponent } from './components/children/section-title/section-title.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ProyectsComponent } from './components/proyects/proyects.component';
     EducationComponent,
     SkillsComponent,
     ProyectsComponent,
+    SectionTitleComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
