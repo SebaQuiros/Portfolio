@@ -10,6 +10,7 @@ import { SkillsService } from 'src/app/services/skills.service';
 })
 export class SkillsComponent implements OnInit {
   skills: SkillSet[] = [];
+  login: boolean = true;
 
   constructor(private skillsService: SkillsService) {}
 
