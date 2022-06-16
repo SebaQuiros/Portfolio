@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Education } from 'src/app/interfaces/education';
-import { EDUCATIONS } from 'src/app/mock-educations';
+import { EducationService } from 'src/app/services/education.service';
 
 @Component({
   selector: 'app-education',
@@ -9,14 +9,23 @@ import { EDUCATIONS } from 'src/app/mock-educations';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
-  educations: Education[] = EDUCATIONS;
-  selectedEducation: Education = EDUCATIONS[0];
+  educations: Education[] = [];
+  selectedEducation?: Education;
 
-  constructor() {}
+  constructor(private educationService: EducationService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getEducations();
+  }
 
-  onSelect(experience: Education): void {
-    this.selectedEducation = experience;
+  getEducations() {
+    this.educationService.getEducations().subscribe((educations) => {
+      this.educations = educations;
+      this.selectedEducation = educations[0];
+    });
+  }
+
+  onSelect(education: Education): void {
+    this.selectedEducation = education;
   }
 }
