@@ -22,6 +22,9 @@
         align-items: center;
         grid-template-columns: 2fr 1fr;
         gap: 20px;
+        .edit-description {
+          margin-bottom: 20px;
+        }
         .set-description {
           box-shadow: var(--box-shadow-1);
           padding: 25px;

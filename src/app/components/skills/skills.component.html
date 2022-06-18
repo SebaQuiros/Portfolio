@@ -16,17 +16,18 @@
       </div>
       <div class="set-content">
         <div class="set-description">
-          <p *ngIf="!editMode">
-            {{ skillSet.description }}
-          </p>
           <input
+            class="edit-description"
             *ngIf="editMode"
             id="description"
             [(ngModel)]="skillSet.description"
             placeholder="description"
           />
+          <p>
+            {{ skillSet.description }}
+          </p>
         </div>
-        <ul *ngIf="!editMode" class="set-list bullet-list">
+        <ul class="set-list bullet-list">
           <li *ngFor="let tool of skillSet.tools">{{ tool }}</li>
         </ul>
       </div>
