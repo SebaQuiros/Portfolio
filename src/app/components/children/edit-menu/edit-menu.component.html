@@ -1,6 +1,6 @@
 <div class="edit-menu">
   <div class="buttons">
-    <button *ngIf="!edit">
+    <button *ngIf="!editing" (click)="startEdit()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -18,7 +18,7 @@
         />
       </svg>
     </button>
-    <button *ngIf="edit">
+    <button *ngIf="editing" (click)="saveEdit()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -35,7 +35,7 @@
         />
       </svg>
     </button>
-    <button *ngIf="edit">
+    <button *ngIf="editing" (click)="cancelEdit()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"

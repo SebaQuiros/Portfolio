@@ -12,6 +12,9 @@ export class ExperienceComponent implements OnInit {
   experiences: Experience[] = [];
   selectedExperience?: Experience;
 
+  login: boolean = true;
+  editMode: boolean = false;
+
   constructor(private experienceService: ExperienceService) {}
 
   ngOnInit(): void {
@@ -24,8 +27,20 @@ export class ExperienceComponent implements OnInit {
       this.selectedExperience = experiences[0];
     });
   }
-
   onSelect(experience: Experience): void {
     this.selectedExperience = experience;
+  }
+  toggleEditMode() {
+    this.editMode = !this.editMode;
+  }
+  editStart() {
+    this.toggleEditMode();
+    console.log('Editing Experiences');
+  }
+  editSave() {
+    this.toggleEditMode();
+  }
+  editCancel() {
+    this.toggleEditMode();
   }
 }

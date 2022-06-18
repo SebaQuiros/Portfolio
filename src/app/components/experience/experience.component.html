@@ -1,5 +1,14 @@
 <section id="sec-02-experience">
-  <app-section-title number="02." text="Experiencia"></app-section-title>
+  <header class="section-header">
+    <app-section-title number="02." text="Experiencia"></app-section-title>
+    <app-edit-menu
+      *ngIf="login"
+      (editStart)="editStart()"
+      (editSave)="editSave()"
+      (editCancel)="editCancel()"
+    ></app-edit-menu>
+  </header>
+
   <div class="inner">
     <div class="tablist">
       <button

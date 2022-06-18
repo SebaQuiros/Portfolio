@@ -175,6 +175,17 @@ section {
   max-width: 1000px;
   margin: 0px auto;
   padding: 100px 0px;
+  .section-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+    app-edit-menu {
+      position: relative;
+      bottom: 3px;
+      margin-left: 20px;
+    }
+  }
 }
 
 #sec-02-experience,

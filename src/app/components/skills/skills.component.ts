@@ -12,6 +12,7 @@ export class SkillsComponent implements OnInit {
   skills: SkillSet[] = [];
 
   login: boolean = true;
+  editMode: boolean = false;
 
   constructor(private skillsService: SkillsService) {}
 
@@ -23,5 +24,18 @@ export class SkillsComponent implements OnInit {
     this.skillsService
       .getSkills()
       .subscribe((skills) => (this.skills = skills));
+  }
+  toggleEditMode() {
+    this.editMode = !this.editMode;
+  }
+  editStart() {
+    this.toggleEditMode();
+    console.log('Editing Skills');
+  }
+  editSave() {
+    this.toggleEditMode();
+  }
+  editCancel() {
+    this.toggleEditMode();
   }
 }
