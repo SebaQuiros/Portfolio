@@ -45,11 +45,15 @@
           margin-top: 20px;
           overflow: hidden;
           li {
+            display: flex;
             margin-bottom: 10px;
-          }
-          li::before {
-            position: relative;
-            left: -18px;
+            &::before {
+              position: relative;
+              left: -18px;
+            }
+            button {
+              margin-left: 10px;
+            }
           }
         }
       }
