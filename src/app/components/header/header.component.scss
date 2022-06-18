@@ -12,16 +12,6 @@ header {
   box-shadow: var(--box-shadow-1);
   .logo {
     margin-right: auto;
-    .img-logo {
-      height: 40px;
-      border-radius: 100%;
-      background-color: transparent;
-      border: 2px solid var(--color-highlight);
-      transition: var(--transition-links);
-      &:hover {
-        background-color: var(--color-highlight-transparent);
-      }
-    }
   }
   .nav-links li {
     font-family: var(--font-mono);
