@@ -8,7 +8,6 @@
       (editCancel)="editCancel()"
     ></app-edit-menu>
   </header>
-
   <div class="inner">
     <div class="tablist">
       <button
@@ -23,9 +22,6 @@
     </div>
     <div class="panel">
       <div class="panel-content" *ngIf="selectedExperience">
-        <!-- Botón de edición -->
-        <!-- <button style="color: red">asdasd</button> -->
-
         <h3>
           {{ selectedExperience.role }}
           <a class="in-text" [href]="selectedExperience.link" target="_blank"
