@@ -1,12 +1,12 @@
 .edit-menu {
   width: max-content;
   height: max-content;
-  .buttons {
+  .buttons-container {
     display: flex;
     background-color: var(--color-highlight-transparent);
-    border-radius: 1000px;
+    border-radius: 50px;
     button {
-      color: var(--color-secondary);
+      padding: 12px;
     }
   }
 }

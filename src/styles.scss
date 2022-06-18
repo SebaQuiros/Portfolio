@@ -163,8 +163,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-highlight-transparent);
-    padding: 12px;
+    color: var(--color-secondary);
+
     &:hover {
       color: var(--color-highlight);
     }
