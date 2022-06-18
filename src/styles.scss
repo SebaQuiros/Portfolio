@@ -159,6 +159,16 @@ button {
       background-color: var(--color-highlight-transparent);
     }
   }
+  &.btn-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-highlight-transparent);
+    padding: 12px;
+    &:hover {
+      color: var(--color-highlight);
+    }
+  }
 }
 
 // Main
