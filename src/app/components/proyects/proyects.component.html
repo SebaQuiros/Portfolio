@@ -1,5 +1,6 @@
 <section id="sec-05-proyects">
   <app-section-title number="05." text="Proyectos"></app-section-title>
+  <app-edit-menu *ngIf="login" [edit]="false"></app-edit-menu>
   <div class="inner">
     <ul class="featured-proyects">
       <li class="project" *ngFor="let proyect of proyects">

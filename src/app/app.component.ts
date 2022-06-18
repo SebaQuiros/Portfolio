@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Portfolio';
-
-  login: boolean = true;
 }

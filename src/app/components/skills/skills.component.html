@@ -1,5 +1,6 @@
 <section id="sec-04-skills">
   <app-section-title number="04." text="Habilidades"></app-section-title>
+  <app-edit-menu *ngIf="login" [edit]="true"></app-edit-menu>
   <div class="inner">
     <div class="skill-set" *ngFor="let skillSet of skills">
       <div class="set-title">

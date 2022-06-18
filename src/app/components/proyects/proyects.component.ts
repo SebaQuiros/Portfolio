@@ -11,6 +11,8 @@ import { ProyectsService } from 'src/app/services/proyects.service';
 export class ProyectsComponent implements OnInit {
   proyects: Proyect[] = [];
 
+  login: boolean = true;
+
   constructor(private proyectService: ProyectsService) {}
 
   ngOnInit(): void {
