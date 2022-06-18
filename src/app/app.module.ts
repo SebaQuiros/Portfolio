@@ -15,6 +15,7 @@ import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectsComponent } from './components/proyects/proyects.component';
 import { SectionTitleComponent } from './components/children/section-title/section-title.component';
+import { EditMenuComponent } from './components/children/edit-menu/edit-menu.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SectionTitleComponent } from './components/children/section-title/secti
     SkillsComponent,
     ProyectsComponent,
     SectionTitleComponent,
+    EditMenuComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

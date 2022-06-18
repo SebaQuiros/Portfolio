@@ -1,0 +1,19 @@
+.edit-menu {
+  width: max-content;
+  height: max-content;
+  .buttons {
+    display: flex;
+    background-color: var(--color-highlight-transparent);
+    border-radius: var(--border-radius-lg);
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-secondary);
+      padding: 12px;
+      &:hover {
+        color: var(--color-highlight);
+      }
+    }
+  }
+}

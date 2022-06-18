@@ -2,11 +2,22 @@
 <app-networks></app-networks>
 <app-mail></app-mail>
 <main>
-  <app-home></app-home>
+  <app-edit-menu *ngIf="login" [edit]="true"></app-edit-menu>
+  <app-home> </app-home>
+
+  <app-edit-menu *ngIf="login" [edit]="false"></app-edit-menu>
   <app-about></app-about>
+
+  <app-edit-menu *ngIf="login" [edit]="true"></app-edit-menu>
   <app-experience></app-experience>
+
+  <app-edit-menu *ngIf="login" [edit]="true"></app-edit-menu>
   <app-education></app-education>
+
+  <app-edit-menu *ngIf="login" [edit]="true"></app-edit-menu>
   <app-skills></app-skills>
+
+  <app-edit-menu *ngIf="login" [edit]="true"></app-edit-menu>
   <app-proyects></app-proyects>
 </main>
 <app-footer></app-footer>
