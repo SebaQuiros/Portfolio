@@ -25,6 +25,7 @@ export class SkillsService {
 
   // Menú de cambios.
   saveChanges() {
-    console.log('Skill service save changes');
+    console.log('Skill service: working');
   }
+  cancelChanges() {}
 }
