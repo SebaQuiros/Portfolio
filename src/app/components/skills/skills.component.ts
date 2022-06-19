@@ -44,7 +44,7 @@ export class SkillsComponent implements OnInit {
   }
   saveChanges(): void {
     this.editMode = false;
-    this.skillsService.saveChanges(this.skills);
+    this.skillsService.saveChanges(this.skills).subscribe();
   }
   cancelChanges() {
     this.editMode = false;
