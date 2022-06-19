@@ -16,20 +16,17 @@ export class EditMenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  toggleEdit() {
-    this.editing = !this.editing;
-  }
   startEdit() {
-    this.toggleEdit();
+    this.editing = true;
     this.editStart.emit();
   }
   saveEdit() {
-    this.toggleEdit();
+    this.editing = false;
     this.editSave.emit();
     console.log('Changes saved');
   }
   cancelEdit() {
-    this.toggleEdit();
+    this.editing = false;
     this.editCancel.emit();
     console.log('Changes canceled');
   }
