@@ -29,10 +29,10 @@ export class ProyectsComponent implements OnInit {
     this.editMode = true;
     console.log('Editing proyects');
   }
-  editSave() {
+  saveChanges() {
     this.editMode = false;
   }
-  editCancel() {
+  cancelChanges() {
     this.editMode = false;
   }
 }

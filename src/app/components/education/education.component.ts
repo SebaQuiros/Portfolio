@@ -34,10 +34,10 @@ export class EducationComponent implements OnInit {
     this.editMode = true;
     console.log('Editing education');
   }
-  editSave() {
+  saveChanges() {
     this.editMode = false;
   }
-  editCancel() {
+  cancelChanges() {
     this.editMode = false;
   }
 }

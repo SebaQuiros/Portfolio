@@ -7,8 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class EditMenuComponent implements OnInit {
   @Output() editStart = new EventEmitter();
-  @Output() editSave = new EventEmitter();
-  @Output() editCancel = new EventEmitter();
+  @Output() saveChanges = new EventEmitter();
+  @Output() cancelChanges = new EventEmitter();
 
   editing: boolean = false;
 
@@ -22,12 +22,12 @@ export class EditMenuComponent implements OnInit {
   }
   saveEdit() {
     this.editing = false;
-    this.editSave.emit();
+    this.saveChanges.emit();
     console.log('Changes saved');
   }
   cancelEdit() {
     this.editing = false;
-    this.editCancel.emit();
+    this.cancelChanges.emit();
     console.log('Changes canceled');
   }
 }

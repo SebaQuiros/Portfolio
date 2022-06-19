@@ -4,8 +4,8 @@
     <app-edit-menu
       *ngIf="login"
       (editStart)="editStart()"
-      (editSave)="editSave()"
-      (editCancel)="editCancel()"
+      (saveChanges)="saveChanges()"
+      (cancelChanges)="cancelChanges()"
     ></app-edit-menu>
   </header>
   <div class="inner">
@@ -30,11 +30,13 @@
         <div class="set-tools">
           <div class="edit-tools" *ngIf="editMode">
             <input
-              class="edit-tools"
-              id="tools"
+              type="text"
+              name="newTool"
+              id="newTool"
               placeholder="Nueva herramienta"
+              [(ngModel)]="newTool"
             />
-            <button class="btn-edit">
+            <button (click)="addTool(skillSet, newTool)" class="btn-edit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -55,7 +57,11 @@
           <ul class="set-list bullet-list">
             <li *ngFor="let tool of skillSet.tools">
               {{ tool }}
-              <button *ngIf="editMode" class="btn-edit">
+              <button
+                (click)="deleteTool(skillSet, tool)"
+                *ngIf="editMode"
+                class="btn-edit"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

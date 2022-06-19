@@ -13,6 +13,7 @@ export class SkillsComponent implements OnInit {
   editMode: boolean = false;
 
   skills: SkillSet[] = [];
+  newTool: string = '';
 
   constructor(private skillsService: SkillsService) {}
 
@@ -25,14 +26,24 @@ export class SkillsComponent implements OnInit {
       .getSkills()
       .subscribe((skills) => (this.skills = skills));
   }
+
+  // Funciones de la sección.
+  addTool(skillSet: SkillSet, tool: string) {
+    skillSet.tools.push(tool);
+  }
+  deleteTool(skillSet: SkillSet, tool: string) {
+    skillSet.tools = skillSet.tools.filter((t) => t !== tool);
+  }
+
+  // Menú de cambios.
   editStart() {
     this.editMode = true;
     console.log('Editing skills');
   }
-  editSave() {
+  saveChanges(): void {
     this.editMode = false;
   }
-  editCancel() {
+  cancelChanges() {
     this.editMode = false;
   }
 }

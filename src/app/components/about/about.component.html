@@ -4,8 +4,8 @@
     <app-edit-menu
       *ngIf="login"
       (editStart)="editStart()"
-      (editSave)="editSave()"
-      (editCancel)="editCancel()"
+      (saveChanges)="saveChanges()"
+      (cancelChanges)="cancelChanges()"
     ></app-edit-menu>
   </header>
   <div class="inner">

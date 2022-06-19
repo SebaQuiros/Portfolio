@@ -22,4 +22,9 @@ export class SkillsService {
   getSkills(): Observable<SkillSet[]> {
     return this.http.get<SkillSet[]>(this.skillsUrl);
   }
+
+  // Menú de cambios.
+  saveChanges() {
+    console.log('Skill service save changes');
+  }
 }
