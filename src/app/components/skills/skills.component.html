@@ -17,20 +17,20 @@
       <div class="edition-controls" *ngIf="editMode">
         <div class="edit-description">
           <input
+            [(ngModel)]="skillSet.description"
             id="description"
             type="text"
             name="description"
-            [(ngModel)]="skillSet.description"
             placeholder="description"
           />
         </div>
         <div class="edit-tools">
           <input
+            [(ngModel)]="newTool"
             id="newTool"
             type="text"
             name="newTool"
             placeholder="Nueva herramienta"
-            [(ngModel)]="newTool"
           />
           <button (click)="addTool(skillSet, newTool)" class="btn-edit">
             <svg
