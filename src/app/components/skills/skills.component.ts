@@ -46,7 +46,6 @@ export class SkillsComponent implements OnInit {
   }
   cancelChanges() {
     this.editMode = false;
-    this.skillsService.cancelChanges();
     this.getSkills();
   }
 }

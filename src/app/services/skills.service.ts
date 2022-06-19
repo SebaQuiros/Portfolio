@@ -27,5 +27,4 @@ export class SkillsService {
   saveChanges() {
     console.log('Skill service: working');
   }
-  cancelChanges() {}
 }
