@@ -22,9 +22,6 @@
         align-items: center;
         grid-template-columns: 2fr 1fr;
         gap: 20px;
-        .edit-description {
-          margin-bottom: 20px;
-        }
         .set-description {
           box-shadow: var(--box-shadow-1);
           padding: 25px;
@@ -32,27 +29,39 @@
           background-color: var(--color-elements);
           color: var(--color-secondary);
           font-size: var(--font-size-md);
+          .edit-description {
+            margin-bottom: 20px;
+          }
           p {
             margin: 0px;
           }
         }
-        .set-list {
-          font-size: var(--font-size-xs);
-          color: var(--color-secondary);
-          position: relative;
-          padding-left: 30px;
-          padding-left: 18px;
-          margin-top: 20px;
-          overflow: hidden;
-          li {
+        .set-tools {
+          .edit-tools {
             display: flex;
-            margin-bottom: 10px;
-            &::before {
-              position: relative;
-              left: -18px;
-            }
             button {
               margin-left: 10px;
+            }
+          }
+          .set-list {
+            font-size: var(--font-size-xs);
+            color: var(--color-secondary);
+            position: relative;
+            padding-left: 30px;
+            padding-left: 18px;
+            margin-top: 20px;
+            overflow: hidden;
+            li {
+              display: flex;
+              align-items: center;
+              margin-bottom: 10px;
+              &::before {
+                position: relative;
+                left: -18px;
+              }
+              button {
+                margin-left: 10px;
+              }
             }
           }
         }

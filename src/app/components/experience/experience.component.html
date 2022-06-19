@@ -13,9 +13,9 @@
       <button
         type="button"
         class="btn-tab"
-        [class.active]="experience === selectedExperience"
         *ngFor="let experience of experiences"
         (click)="onSelect(experience)"
+        [class.active]="experience === selectedExperience"
       >
         {{ experience.button }}
       </button>
