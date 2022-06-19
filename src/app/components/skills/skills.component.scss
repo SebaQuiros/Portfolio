@@ -17,6 +17,19 @@
           margin-top: 10px;
         }
       }
+      .edition-controls {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        margin-bottom: 20px;
+        .edit-tools {
+          display: flex;
+          button {
+            margin-left: 10px;
+          }
+        }
+      }
       .set-content {
         display: grid;
         align-items: center;
@@ -29,20 +42,11 @@
           background-color: var(--color-elements);
           color: var(--color-secondary);
           font-size: var(--font-size-md);
-          .edit-description {
-            margin-bottom: 20px;
-          }
           p {
             margin: 0px;
           }
         }
         .set-tools {
-          .edit-tools {
-            display: flex;
-            button {
-              margin-left: 10px;
-            }
-          }
           .set-list {
             font-size: var(--font-size-xs);
             color: var(--color-secondary);
