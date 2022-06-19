@@ -29,7 +29,9 @@ export class SkillsComponent implements OnInit {
 
   // Funciones de la sección.
   addTool(skillSet: SkillSet, tool: string) {
-    skillSet.tools.push(tool);
+    if (tool) {
+      skillSet.tools.push(tool);
+    }
   }
   deleteTool(skillSet: SkillSet, tool: string) {
     skillSet.tools = skillSet.tools.filter((t) => t !== tool);
@@ -42,7 +44,7 @@ export class SkillsComponent implements OnInit {
   }
   saveChanges(): void {
     this.editMode = false;
-    this.skillsService.saveChanges();
+    this.skillsService.saveChanges(this.skills);
   }
   cancelChanges() {
     this.editMode = false;

@@ -5,17 +5,17 @@ import { Observable, of } from 'rxjs';
 
 import { Proyect } from '../interfaces/proyect';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-};
-
 @Injectable({
   providedIn: 'root',
 })
 export class ProyectsService {
   private proyectsUrl = 'http://localhost:5000/proyects';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
 
   constructor(private http: HttpClient) {}
 

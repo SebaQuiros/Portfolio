@@ -6,17 +6,17 @@ import { Observable, of } from 'rxjs';
 import { Experience } from '../interfaces/experience';
 import { Education } from '../interfaces/education';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-};
-
 @Injectable({
   providedIn: 'root',
 })
 export class EducationService {
   private educationsUrl = 'http://localhost:5000/educations';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
 
   constructor(private http: HttpClient) {}
 

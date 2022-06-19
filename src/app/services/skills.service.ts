@@ -5,17 +5,17 @@ import { Observable, of } from 'rxjs';
 
 import { SkillSet } from '../interfaces/skill-set';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-};
-
 @Injectable({
   providedIn: 'root',
 })
 export class SkillsService {
   private skillsUrl = 'http://localhost:5000/skills';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
 
   constructor(private http: HttpClient) {}
 
@@ -23,8 +23,8 @@ export class SkillsService {
     return this.http.get<SkillSet[]>(this.skillsUrl);
   }
 
-  // Menú de cambios.
-  saveChanges() {
-    console.log('Skill service: working');
+  // Gestión de cambios
+  saveChanges(skills: SkillSet[]): Observable<any> {
+    return this.http.put(this.skillsUrl, skills, this.httpOptions);
   }
 }
