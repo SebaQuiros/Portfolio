@@ -24,7 +24,7 @@ export class SkillsService {
   }
 
   // Gestión de cambios
-  saveChanges(skills: SkillSet[]): Observable<any> {
-    return this.http.put(this.skillsUrl, skills, this.httpOptions);
+  saveChanges(skills: SkillSet[]) {
+    this.http.put(this.skillsUrl, skills, this.httpOptions);
   }
 }
