@@ -9,11 +9,11 @@ import { ExperienceService } from 'src/app/services/experience.service';
   styleUrls: ['./experience.component.scss'],
 })
 export class ExperienceComponent implements OnInit {
-  experiences: Experience[] = [];
-  selectedExperience?: Experience;
-
   login: boolean = true;
   editMode: boolean = false;
+
+  experiences: Experience[] = [];
+  selectedExperience?: Experience;
 
   constructor(private experienceService: ExperienceService) {}
 
@@ -30,17 +30,14 @@ export class ExperienceComponent implements OnInit {
   onSelect(experience: Experience): void {
     this.selectedExperience = experience;
   }
-  toggleEditMode() {
-    this.editMode = !this.editMode;
-  }
   editStart() {
-    this.toggleEditMode();
-    console.log('Editing Experiences');
+    this.editMode = true;
+    console.log('Editing experience');
   }
   editSave() {
-    this.toggleEditMode();
+    this.editMode = false;
   }
   editCancel() {
-    this.toggleEditMode();
+    this.editMode = false;
   }
 }

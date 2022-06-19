@@ -9,6 +9,9 @@ import { EducationService } from 'src/app/services/education.service';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
+  login: boolean = true;
+  editMode: boolean = false;
+
   educations: Education[] = [];
   selectedEducation?: Education;
 
@@ -24,8 +27,17 @@ export class EducationComponent implements OnInit {
       this.selectedEducation = educations[0];
     });
   }
-
   onSelect(education: Education): void {
     this.selectedEducation = education;
+  }
+  editStart() {
+    this.editMode = true;
+    console.log('Editing education');
+  }
+  editSave() {
+    this.editMode = false;
+  }
+  editCancel() {
+    this.editMode = false;
   }
 }

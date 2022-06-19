@@ -9,6 +9,9 @@ import { ProyectsService } from 'src/app/services/proyects.service';
   styleUrls: ['./proyects.component.scss'],
 })
 export class ProyectsComponent implements OnInit {
+  login: boolean = true;
+  editMode: boolean = false;
+
   proyects: Proyect[] = [];
 
   constructor(private proyectService: ProyectsService) {}
@@ -21,5 +24,15 @@ export class ProyectsComponent implements OnInit {
     this.proyectService
       .getProyects()
       .subscribe((proyects) => (this.proyects = proyects));
+  }
+  editStart() {
+    this.editMode = true;
+    console.log('Editing proyects');
+  }
+  editSave() {
+    this.editMode = false;
+  }
+  editCancel() {
+    this.editMode = false;
   }
 }

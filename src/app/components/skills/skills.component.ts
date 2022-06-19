@@ -9,10 +9,10 @@ import { SkillsService } from 'src/app/services/skills.service';
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent implements OnInit {
-  skills: SkillSet[] = [];
-
   login: boolean = true;
   editMode: boolean = false;
+
+  skills: SkillSet[] = [];
 
   constructor(private skillsService: SkillsService) {}
 
@@ -25,17 +25,14 @@ export class SkillsComponent implements OnInit {
       .getSkills()
       .subscribe((skills) => (this.skills = skills));
   }
-  toggleEditMode() {
-    this.editMode = !this.editMode;
-  }
   editStart() {
-    this.toggleEditMode();
-    console.log('Editing Skills');
+    this.editMode = true;
+    console.log('Editing skills');
   }
   editSave() {
-    this.toggleEditMode();
+    this.editMode = false;
   }
   editCancel() {
-    this.toggleEditMode();
+    this.editMode = false;
   }
 }
