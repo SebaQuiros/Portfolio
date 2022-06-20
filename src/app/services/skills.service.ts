@@ -25,6 +25,7 @@ export class SkillsService {
 
   // Update changes made by the component
   saveChanges(skills: SkillSet[]): Observable<SkillSet[]> {
+    console.log(skills); // Proof the array is returning with the edits.
     return this.http.patch<SkillSet[]>(
       this.skillsUrl,
       skills,
