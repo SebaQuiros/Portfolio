@@ -23,6 +23,15 @@
     <div class="panel">
       <div class="panel-content" *ngIf="selectedExperience">
         <div class="edition-controls" *ngIf="editMode">
+          <div class="edit-button">
+            <input
+              [(ngModel)]="selectedExperience.button"
+              id="role"
+              type="text"
+              name="role"
+              placeholder="role"
+            />
+          </div>
           <div class="edit-information">
             <input
               [(ngModel)]="selectedExperience.role"

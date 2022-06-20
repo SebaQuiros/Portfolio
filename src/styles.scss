@@ -225,14 +225,16 @@ section {
       .panel-content {
         width: 100%;
         height: auto;
-        padding: 10px 5px;
         transition: var(--transition-general);
         .edition-controls {
           margin-bottom: 20px;
+          .edit-button {
+            margin-bottom: 10px;
+          }
           .edit-information {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
             gap: 10px;
           }
           .edit-description {
