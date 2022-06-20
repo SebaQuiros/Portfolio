@@ -226,6 +226,21 @@ section {
         height: auto;
         padding: 10px 5px;
         transition: var(--transition-general);
+        .edition-controls {
+          margin-bottom: 20px;
+          .edit-information {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+          }
+          .edit-description {
+            display: flex;
+            button {
+              margin-left: 10px;
+            }
+          }
+        }
         h3 {
           font-size: 22px;
           margin: 0px;
@@ -248,11 +263,16 @@ section {
           position: relative;
           padding-left: 30px;
           li {
+            display: flex;
+            align-items: center;
             margin-bottom: 10px;
-          }
-          li::before {
-            position: absolute;
-            left: 0px;
+            &:before {
+              position: absolute;
+              left: 0px;
+            }
+            button {
+              margin-left: 10px;
+            }
           }
         }
       }

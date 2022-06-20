@@ -14,6 +14,7 @@ export class ExperienceComponent implements OnInit {
 
   experiences: Experience[] = [];
   selectedExperience?: Experience;
+  newParagraph: string = '';
 
   constructor(private experienceService: ExperienceService) {}
 
@@ -30,14 +31,29 @@ export class ExperienceComponent implements OnInit {
   onSelect(experience: Experience): void {
     this.selectedExperience = experience;
   }
+  // Funciones de la sección.
+  addParagraph(experience: Experience, paragraph: string) {
+    if (paragraph) {
+      experience.description.push(paragraph);
+    }
+  }
+  deleteParagraph(experience: Experience, paragraph: string) {
+    experience.description = experience.description.filter(
+      (t) => t !== paragraph
+    );
+  }
+
+  // Menú de cambios.
   editStart() {
     this.editMode = true;
-    console.log('Editing experience');
+    console.log('Editing skills');
   }
-  saveChanges() {
+  saveChanges(): void {
     this.editMode = false;
+    this.experienceService.saveChanges(this.experiences).subscribe();
   }
   cancelChanges() {
     this.editMode = false;
+    this.getExperiences();
   }
 }

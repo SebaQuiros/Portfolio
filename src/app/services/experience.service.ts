@@ -22,4 +22,13 @@ export class ExperienceService {
   getExperiences(): Observable<Experience[]> {
     return this.http.get<Experience[]>(this.experiencesUrl);
   }
+
+  // Gestión de cambios
+  saveChanges(experiences: Experience[]): Observable<Experience[]> {
+    return this.http.patch<Experience[]>(
+      this.experiencesUrl,
+      experiences,
+      this.httpOptions
+    );
+  }
 }
