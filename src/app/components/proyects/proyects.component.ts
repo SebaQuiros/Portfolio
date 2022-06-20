@@ -25,14 +25,28 @@ export class ProyectsComponent implements OnInit {
       .getProyects()
       .subscribe((proyects) => (this.proyects = proyects));
   }
+
+  // Funciones de la sección.
+  addTool(proyect: Proyect, tool: string) {
+    if (tool) {
+      proyect.tools.push(tool);
+    }
+  }
+  deleteTool(proyect: Proyect, tool: string) {
+    proyect.tools = proyect.tools.filter((t) => t !== tool);
+  }
+
+  // Menú de cambios.
   editStart() {
     this.editMode = true;
-    console.log('Editing proyects');
+    console.log('Editing skills');
   }
-  saveChanges() {
+  saveChanges(): void {
     this.editMode = false;
+    this.proyectService.saveChanges(this.proyects).subscribe();
   }
   cancelChanges() {
     this.editMode = false;
+    this.getProyects();
   }
 }

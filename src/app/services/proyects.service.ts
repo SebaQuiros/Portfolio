@@ -22,4 +22,13 @@ export class ProyectsService {
   getProyects(): Observable<Proyect[]> {
     return this.http.get<Proyect[]>(this.proyectsUrl);
   }
+
+  // Gestión de cambios
+  saveChanges(experiences: Proyect[]): Observable<Proyect[]> {
+    return this.http.patch<Proyect[]>(
+      this.proyectsUrl,
+      experiences,
+      this.httpOptions
+    );
+  }
 }
