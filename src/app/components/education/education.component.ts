@@ -14,6 +14,7 @@ export class EducationComponent implements OnInit {
 
   educations: Education[] = [];
   selectedEducation?: Education;
+  newParagraph: string = '';
 
   constructor(private educationService: EducationService) {}
 
@@ -30,14 +31,29 @@ export class EducationComponent implements OnInit {
   onSelect(education: Education): void {
     this.selectedEducation = education;
   }
+
+  // Funciones de la sección.
+  addParagraph(education: Education, paragraph: string) {
+    if (paragraph) {
+      education.description.push(paragraph);
+    }
+  }
+  deleteParagraph(education: Education, paragraph: string) {
+    education.description = education.description.filter(
+      (t) => t !== paragraph
+    );
+  }
+  // Menú de cambios.
   editStart() {
     this.editMode = true;
-    console.log('Editing education');
+    console.log('Editing skills');
   }
-  saveChanges() {
+  saveChanges(): void {
     this.editMode = false;
+    this.educationService.saveChanges(this.educations).subscribe();
   }
   cancelChanges() {
     this.editMode = false;
+    this.getEducations();
   }
 }

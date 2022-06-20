@@ -22,6 +22,83 @@
     </div>
     <div class="panel">
       <div class="panel-content" *ngIf="selectedEducation">
+        <div class="edition-controls" *ngIf="editMode">
+          <div class="edit-button">
+            <input
+              [(ngModel)]="selectedEducation.button"
+              id="role"
+              type="text"
+              name="role"
+              placeholder="role"
+            />
+          </div>
+          <div class="edit-information">
+            <input
+              [(ngModel)]="selectedEducation.role"
+              id="role"
+              type="text"
+              name="role"
+              placeholder="role"
+            />
+            <input
+              [(ngModel)]="selectedEducation.title"
+              id="title"
+              type="text"
+              name="title"
+              placeholder="title"
+            />
+            <input
+              [(ngModel)]="selectedEducation.subtitle"
+              id="subtitle"
+              type="text"
+              name="subtitle"
+              placeholder="subtitle"
+            />
+            <input
+              [(ngModel)]="selectedEducation.time"
+              id="time"
+              type="text"
+              name="time"
+              placeholder="time"
+            />
+            <input
+              [(ngModel)]="selectedEducation.link"
+              id="link"
+              type="text"
+              name="link"
+              placeholder="link"
+            />
+            <div class="edit-description">
+              <input
+                [(ngModel)]="newParagraph"
+                id="newTool"
+                type="text"
+                name="newTool"
+                placeholder="Nuevo párrafo"
+              />
+              <button
+                (click)="addParagraph(selectedEducation, newParagraph)"
+                class="btn-edit"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  class="bi bi-plus-circle"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                  />
+                  <path
+                    d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
         <h3>
           {{ selectedEducation.role }}
           <a class="in-text" [href]="selectedEducation.link" target="_blank"
@@ -33,6 +110,27 @@
         <ul class="panel-list bullet-list">
           <li *ngFor="let paragraph of selectedEducation.description">
             {{ paragraph }}
+            <button
+              (click)="deleteParagraph(selectedEducation, paragraph)"
+              *ngIf="editMode"
+              class="btn-edit"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-dash-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                />
+                <path
+                  d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                />
+              </svg>
+            </button>
           </li>
         </ul>
       </div>

@@ -31,6 +31,7 @@ export class ExperienceComponent implements OnInit {
   onSelect(experience: Experience): void {
     this.selectedExperience = experience;
   }
+
   // Funciones de la sección.
   addParagraph(experience: Experience, paragraph: string) {
     if (paragraph) {
