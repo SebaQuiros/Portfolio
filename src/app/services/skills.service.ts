@@ -23,7 +23,7 @@ export class SkillsService {
     return this.http.get<SkillSet[]>(this.skillsUrl);
   }
 
-  // Gestión de cambios
+  // Update changes made by the component
   saveChanges(skills: SkillSet[]): Observable<SkillSet[]> {
     return this.http.patch<SkillSet[]>(
       this.skillsUrl,
