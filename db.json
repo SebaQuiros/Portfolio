@@ -108,7 +108,7 @@
       "type": "Emprendimiento",
       "link": "https://www.instagram.com/plan.3d/",
       "title": "Plan 3D",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur tempora aliquid.",
+      "description": "Mi emprendimiento personal de impresión 3D. Hago productos, como lámparas de planetas o un Tateti especial, y diseños a pedido como organizadores de juegos de mesa.",
       "tools": ["Fusion 360", "PrusaSlicer"],
       "img": "../assets/img/proyects/plan 3d.jpg",
       "imgAlt": "Lunas de Plan 3D."
@@ -118,7 +118,7 @@
       "type": "Trabajos",
       "link": "https://www.behance.net/gallery/85577341/TRABAJO-Ejemplos-de-renders",
       "title": "Renders profesionales",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur tempora aliquid.",
+      "description": "Me desarrollé laboralmente haciendo renders arquitectónicos. Estos son algunos ejemplos de trabajos realizados.",
       "tools": ["SketchUp", "V-Ray", "Photoshop"],
       "img": "../assets/img/proyects/renders.png",
       "imgAlt": "Render de una sala de reuniones de oficina con equipamiento de madera y vidrio."
@@ -128,7 +128,7 @@
       "type": "Proyecto de Diseño Industrial",
       "link": "https://www.behance.net/gallery/143944709/PROYECTO-Biomateriales",
       "title": "Producto descartable biodegradable",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur tempora aliquid.",
+      "description": "Para este proyecto final tuve que diseñar primero un biomaterial y segundo un producto descartable que permita comer de pie.",
       "tools": ["Biomateriales", "Photoshop"],
       "img": "../assets/img/proyects/conoflex.jpg",
       "imgAlt": "Lunas de Plan 3D"
@@ -138,7 +138,7 @@
       "type": "Proyecto de Arquitectura",
       "link": "https://www.behance.net/gallery/62157555/PROYECTO-Escuela-nautica-en-Puerto-de-Olivos",
       "title": "Escuela náutica en Puerto de Olivos",
-      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur tempora aliquid.",
+      "description": "Este proyecto arquitectónico es un edificio implantado junto al Río de la Plata. El programa incluye la escuela, un bar y una sala de exposiciones.",
       "tools": ["AutoCAD", "SketchUp", "Photoshop"],
       "img": "../assets/img/proyects/escuela en puerto de olivos.jpg",
       "imgAlt": "Corte arquitectónico del proyecto."
