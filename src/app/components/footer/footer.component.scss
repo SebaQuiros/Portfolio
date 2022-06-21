@@ -1,4 +1,16 @@
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 200px;
+  margin-left: 200px;
+  .footer-content {
+    margin-right: auto;
+  }
+  .ap-logo {
+    img {
+      filter: opacity(80%);
+      height: 100px;
+    }
+  }
 }
