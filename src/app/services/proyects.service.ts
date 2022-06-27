@@ -23,7 +23,7 @@ export class ProyectsService {
     return this.http.get<Proyect[]>(this.proyectsUrl);
   }
 
-  // Gestión de cambios
+  // Update changes made by the component
   saveChanges(experiences: Proyect[]): Observable<Proyect[]> {
     return this.http.patch<Proyect[]>(
       this.proyectsUrl,

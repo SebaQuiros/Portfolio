@@ -27,7 +27,7 @@ export class SkillsComponent implements OnInit {
       .subscribe((skills) => (this.skills = skills));
   }
 
-  // Edition functions of this section
+  // Funciones de la sección.
   addTool(skillSet: SkillSet, tool: string) {
     if (tool) {
       skillSet.tools.push(tool);
@@ -37,7 +37,7 @@ export class SkillsComponent implements OnInit {
     skillSet.tools = skillSet.tools.filter((t) => t !== tool);
   }
 
-  // Changes menu
+  // Menú de cambios.
   editStart() {
     this.editMode = true;
     console.log('Editing skills');

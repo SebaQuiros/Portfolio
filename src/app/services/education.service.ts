@@ -23,7 +23,7 @@ export class EducationService {
     return this.http.get<Education[]>(this.educationsUrl);
   }
 
-  // Gestión de cambios
+  // Update changes made by the component
   saveChanges(experiences: Education[]): Observable<Education[]> {
     return this.http.patch<Education[]>(
       this.educationsUrl,

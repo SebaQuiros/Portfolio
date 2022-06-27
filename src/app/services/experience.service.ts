@@ -23,7 +23,7 @@ export class ExperienceService {
     return this.http.get<Experience[]>(this.experiencesUrl);
   }
 
-  // Gestión de cambios
+  // Update changes made by the component
   saveChanges(experiences: Experience[]): Observable<Experience[]> {
     return this.http.patch<Experience[]>(
       this.experiencesUrl,
