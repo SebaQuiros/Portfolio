@@ -9,7 +9,7 @@ import { Experience } from 'src/app/interfaces/experience';
   providedIn: 'root',
 })
 export class ExperienceService {
-  private experiencesUrl = 'http://localhost:5000/experiences';
+  private experiencesUrl = 'http://localhost:8080/experiences';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -24,10 +24,10 @@ export class ExperienceService {
   }
 
   // Update changes made by the component
-  saveChanges(experiences: Experience[]): Observable<Experience[]> {
-    return this.http.patch<Experience[]>(
+  saveChanges(experience: Experience): Observable<Experience[]> {
+    return this.http.put<Experience[]>(
       this.experiencesUrl,
-      experiences,
+      experience,
       this.httpOptions
     );
   }

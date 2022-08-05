@@ -51,7 +51,9 @@ export class ExperienceComponent implements OnInit {
   }
   saveChanges(): void {
     this.editMode = false;
-    this.experienceService.saveChanges(this.experiences).subscribe();
+    this.experiences.forEach((experience) =>
+      this.experienceService.saveChanges(experience).subscribe()
+    );
   }
   cancelChanges() {
     this.editMode = false;
