@@ -9,7 +9,7 @@ import { SkillSet } from '../interfaces/skill-set';
   providedIn: 'root',
 })
 export class SkillsService {
-  private skillsUrl = 'http://localhost:5000/skills';
+  private skillsUrl = 'http://localhost:8080/skills';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -24,11 +24,7 @@ export class SkillsService {
   }
 
   // Update changes made by the component
-  saveChanges(skills: SkillSet[]): Observable<SkillSet[]> {
-    return this.http.patch<SkillSet[]>(
-      this.skillsUrl,
-      skills,
-      this.httpOptions
-    );
+  saveChanges(skills: SkillSet): Observable<SkillSet[]> {
+    return this.http.put<SkillSet[]>(this.skillsUrl, skills, this.httpOptions);
   }
 }
