@@ -24,7 +24,11 @@ export class SkillsService {
   }
 
   // Update changes made by the component
-  saveChanges(skills: SkillSet): Observable<SkillSet[]> {
-    return this.http.put<SkillSet[]>(this.skillsUrl, skills, this.httpOptions);
+  saveChanges(skillset: SkillSet): Observable<SkillSet[]> {
+    return this.http.put<SkillSet[]>(
+      this.skillsUrl,
+      skillset,
+      this.httpOptions
+    );
   }
 }

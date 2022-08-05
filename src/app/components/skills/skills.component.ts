@@ -43,11 +43,10 @@ export class SkillsComponent implements OnInit {
     console.log('Editing skills');
   }
   saveChanges(): void {
+    this.editMode = false;
     this.skills.forEach((skillset) =>
       this.skillsService.saveChanges(skillset).subscribe()
     );
-    // this.editMode = false;
-    // this.skillsService.saveChanges(this.skills).subscribe();
   }
   cancelChanges() {
     this.editMode = false;
