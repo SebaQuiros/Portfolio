@@ -26,19 +26,19 @@
           <div class="edit-button">
             <input
               [(ngModel)]="selectedEducation.button"
-              id="role"
+              id="occupation"
               type="text"
-              name="role"
-              placeholder="role"
+              name="occupation"
+              placeholder="occupation"
             />
           </div>
           <div class="edit-information">
             <input
-              [(ngModel)]="selectedEducation.role"
-              id="role"
+              [(ngModel)]="selectedEducation.occupation"
+              id="occupation"
               type="text"
-              name="role"
-              placeholder="role"
+              name="occupation"
+              placeholder="occupation"
             />
             <input
               [(ngModel)]="selectedEducation.title"
@@ -55,11 +55,11 @@
               placeholder="subtitle"
             />
             <input
-              [(ngModel)]="selectedEducation.time"
-              id="time"
+              [(ngModel)]="selectedEducation.duration"
+              id="duration"
               type="text"
-              name="time"
-              placeholder="time"
+              name="duration"
+              placeholder="duration"
             />
             <input
               [(ngModel)]="selectedEducation.link"
@@ -100,13 +100,13 @@
           </div>
         </div>
         <h3>
-          {{ selectedEducation.role }}
+          {{ selectedEducation.occupation }}
           <a class="in-text" [href]="selectedEducation.link" target="_blank"
             >{{ selectedEducation.title }}
           </a>
         </h3>
         <div class="panel-subtitle">{{ selectedEducation.subtitle }}</div>
-        <span>{{ selectedEducation.time }}</span>
+        <span>{{ selectedEducation.duration }}</span>
         <ul class="panel-list bullet-list">
           <li *ngFor="let paragraph of selectedEducation.description">
             {{ paragraph }}

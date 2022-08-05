@@ -26,19 +26,19 @@
           <div class="edit-button">
             <input
               [(ngModel)]="selectedExperience.button"
-              id="role"
+              id="occupation"
               type="text"
-              name="role"
-              placeholder="role"
+              name="occupation"
+              placeholder="occupation"
             />
           </div>
           <div class="edit-information">
             <input
-              [(ngModel)]="selectedExperience.role"
-              id="role"
+              [(ngModel)]="selectedExperience.occupation"
+              id="occupation"
               type="text"
-              name="role"
-              placeholder="role"
+              name="occupation"
+              placeholder="occupation"
             />
             <input
               [(ngModel)]="selectedExperience.title"
@@ -55,11 +55,11 @@
               placeholder="subtitle"
             />
             <input
-              [(ngModel)]="selectedExperience.time"
-              id="time"
+              [(ngModel)]="selectedExperience.duration"
+              id="duration"
               type="text"
-              name="time"
-              placeholder="time"
+              name="duration"
+              placeholder="duration"
             />
             <input
               [(ngModel)]="selectedExperience.link"
@@ -100,13 +100,13 @@
           </div>
         </div>
         <h3>
-          {{ selectedExperience.role }}
+          {{ selectedExperience.occupation }}
           <a class="in-text" [href]="selectedExperience.link" target="_blank"
             >{{ selectedExperience.title }}
           </a>
         </h3>
         <div class="panel-subtitle">{{ selectedExperience.subtitle }}</div>
-        <span>{{ selectedExperience.time }}</span>
+        <span>{{ selectedExperience.duration }}</span>
         <ul class="panel-list bullet-list">
           <li *ngFor="let paragraph of selectedExperience.description">
             {{ paragraph }}
