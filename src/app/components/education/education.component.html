@@ -13,7 +13,7 @@
   <div class="inner">
     <div class="tablist">
       <ul>
-        <li *ngFor="let education of educations">
+        <li *ngFor="let education of educations.reverse()">
           <button
             (click)="deleteEducation(education)"
             *ngIf="editMode"

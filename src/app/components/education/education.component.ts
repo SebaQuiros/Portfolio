@@ -33,7 +33,7 @@ export class EducationComponent implements OnInit {
   getEducations() {
     this.educationService.getEducations().subscribe((educations) => {
       this.educations = educations;
-      this.selectedEducation = educations[0];
+      this.selectedEducation = educations[educations.length - 1];
     });
   }
   onSelect(education: Education): void {

@@ -33,7 +33,7 @@ export class ExperienceComponent implements OnInit {
   getExperiences() {
     this.experienceService.getExperiences().subscribe((experiences) => {
       this.experiences = experiences;
-      this.selectedExperience = experiences[0];
+      this.selectedExperience = experiences[experiences.length - 1];
     });
   }
   onSelect(experience: Experience): void {
@@ -42,10 +42,14 @@ export class ExperienceComponent implements OnInit {
 
   // Funciones de la sección.
   addExperience() {
-    this.experiences.push(this.newExperience);
+    this.experienceService
+      .addExperience(this.newExperience)
+      .subscribe(() => this.experiences.push(this.newExperience));
   }
   deleteExperience(experience: Experience) {
-    this.experiences = this.experiences.filter((e) => e !== experience);
+    this.experienceService.deleteExperience(experience).subscribe(() => {
+      this.experiences = this.experiences.filter((e) => e !== experience);
+    });
   }
   addParagraph(experience: Experience, paragraph: string) {
     if (paragraph) {
