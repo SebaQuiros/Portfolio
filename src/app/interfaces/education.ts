@@ -1,10 +1,10 @@
 export interface Education {
-  id: number;
+  id?: number;
   button: string;
   occupation: string;
   title: string;
   link: string;
   subtitle: string;
   duration: string;
-  description: string[];
+  description?: string[];
 }

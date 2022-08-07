@@ -9,7 +9,7 @@ import { Education } from '../interfaces/education';
   providedIn: 'root',
 })
 export class EducationService {
-  private educationsUrl = 'http://localhost:5000/educations';
+  private educationsUrl = 'http://localhost:8080/educations';
 
   httpOptions = {
     headers: new HttpHeaders({

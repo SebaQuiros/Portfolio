@@ -9,7 +9,7 @@ import { SkillSet } from '../interfaces/skill-set';
   providedIn: 'root',
 })
 export class SkillsService {
-  private skillsUrl = 'http://localhost:5000/skills';
+  private skillsUrl = 'http://localhost:8080/skills';
 
   httpOptions = {
     headers: new HttpHeaders({

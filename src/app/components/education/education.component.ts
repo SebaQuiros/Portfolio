@@ -14,6 +14,14 @@ export class EducationComponent implements OnInit {
 
   educations: Education[] = [];
   selectedEducation?: Education;
+  newEducation: Education = {
+    button: 'Nueva educación',
+    occupation: '',
+    title: '',
+    link: '',
+    subtitle: '',
+    duration: '',
+  };
   newParagraph: string = '';
 
   constructor(private educationService: EducationService) {}
@@ -33,19 +41,19 @@ export class EducationComponent implements OnInit {
   }
 
   // Funciones de la sección.
-  addEducation(education: Education) {
-    this.educations.push(education);
+  addEducation() {
+    this.educations.push(this.newEducation);
   }
   deleteEducation(education: Education) {
     this.educations = this.educations.filter((e) => e !== education);
   }
   addParagraph(education: Education, paragraph: string) {
     if (paragraph) {
-      education.description.push(paragraph);
+      education.description!.push(paragraph);
     }
   }
   deleteParagraph(education: Education, paragraph: string) {
-    education.description = education.description.filter(
+    education.description = education.description!.filter(
       (t) => t !== paragraph
     );
   }
