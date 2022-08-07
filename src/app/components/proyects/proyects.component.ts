@@ -27,6 +27,19 @@ export class ProyectsComponent implements OnInit {
   }
 
   // Funciones de la sección.
+  addProyect() {
+    let newProyect: Proyect = {
+      id: this.proyects.length,
+      type: '',
+      link: '',
+      title: '',
+      description: '',
+      tools: [''],
+      img: '',
+      imgAlt: '',
+    };
+    this.proyects.push(newProyect);
+  }
   addTool(proyect: Proyect, tool: string) {
     if (tool) {
       proyect.tools.push(tool);

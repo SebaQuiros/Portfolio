@@ -14,14 +14,6 @@ export class ExperienceComponent implements OnInit {
 
   experiences: Experience[] = [];
   selectedExperience?: Experience;
-  newExperience: Experience = {
-    button: 'Nueva experiencia',
-    occupation: '',
-    title: '',
-    link: '',
-    subtitle: '',
-    duration: '',
-  };
   newParagraph: string = '';
 
   constructor(private experienceService: ExperienceService) {}
@@ -42,9 +34,17 @@ export class ExperienceComponent implements OnInit {
 
   // Funciones de la sección.
   addExperience() {
-    this.experienceService
-      .addExperience(this.newExperience)
-      .subscribe(() => this.experiences.push(this.newExperience));
+    let newExperience: Experience = {
+      id: this.experiences.length,
+      button: 'Nueva experiencia',
+      occupation: '',
+      title: '',
+      link: '',
+      subtitle: '',
+      duration: '',
+    };
+    this.experiences.push(newExperience);
+    this.selectedExperience = this.experiences[this.experiences.length - 1];
   }
   deleteExperience(experience: Experience) {
     this.experienceService.deleteExperience(experience).subscribe(() => {

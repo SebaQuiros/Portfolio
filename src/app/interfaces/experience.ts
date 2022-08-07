@@ -1,5 +1,5 @@
 export interface Experience {
-  id?: number;
+  id: number;
   button: string;
   occupation: string;
   title: string;
