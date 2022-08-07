@@ -35,7 +35,7 @@ export class EducationComponent implements OnInit {
   // Funciones de la sección.
   addEducation() {
     let newEducation: Education = {
-      id: this.educations.length,
+      id: this.educations.length + 1,
       button: 'Nueva educación',
       occupation: '',
       title: '',
