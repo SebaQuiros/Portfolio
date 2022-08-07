@@ -50,7 +50,9 @@ export class EducationComponent implements OnInit {
   }
   saveChanges(): void {
     this.editMode = false;
-    this.educationService.saveChanges(this.educations).subscribe();
+    this.educations.forEach((education) =>
+      this.educationService.saveChanges(education).subscribe()
+    );
   }
   cancelChanges() {
     this.editMode = false;

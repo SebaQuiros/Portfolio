@@ -24,10 +24,10 @@ export class EducationService {
   }
 
   // Update changes made by the component
-  saveChanges(experiences: Education[]): Observable<Education[]> {
-    return this.http.patch<Education[]>(
+  saveChanges(education: Education): Observable<Education[]> {
+    return this.http.put<Education[]>(
       this.educationsUrl,
-      experiences,
+      education,
       this.httpOptions
     );
   }
