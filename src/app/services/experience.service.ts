@@ -23,14 +23,6 @@ export class ExperienceService {
     return this.http.get<Experience[]>(this.experiencesUrl);
   }
 
-  addExperience(experience: Experience): Observable<Experience> {
-    return this.http.post<Experience>(
-      this.experiencesUrl,
-      experience,
-      this.httpOptions
-    );
-  }
-
   deleteExperience(experience: Experience): Observable<Experience> {
     const url = `${this.experiencesUrl}/${experience.id}`;
     return this.http.delete<Experience>(url);

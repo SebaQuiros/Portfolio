@@ -15,6 +15,7 @@ export class ExperienceComponent implements OnInit {
   experiences: Experience[] = [];
   selectedExperience?: Experience;
   newExperience: Experience = {
+    id: this.experiences.length,
     button: 'Nueva experiencia',
     occupation: '',
     title: '',
@@ -42,14 +43,14 @@ export class ExperienceComponent implements OnInit {
 
   // Funciones de la sección.
   addExperience() {
-    this.experienceService
-      .addExperience(this.newExperience)
-      .subscribe(() => this.experiences.push(this.newExperience));
+    this.experienceService;
+    this.experiences.push(this.newExperience);
   }
   deleteExperience(experience: Experience) {
-    this.experienceService.deleteExperience(experience).subscribe(() => {
-      this.experiences = this.experiences.filter((e) => e !== experience);
-    });
+    this.experiences = this.experiences.filter((e) => e.id !== experience.id);
+    // this.experienceService.deleteExperience(experience).subscribe(() => {
+    //   this.experiences = this.experiences.filter((e) => e !== experience);
+    // });
   }
   addParagraph(experience: Experience, paragraph: string) {
     if (paragraph) {
