@@ -29,10 +29,10 @@ export class ProyectsComponent implements OnInit {
   // Funciones de la sección.
   addProyect() {
     let newProyect: Proyect = {
-      id: this.proyects.length,
-      type: '',
+      id: this.proyects.length + 1,
+      type: 'Ejemplo',
       link: '',
-      title: '',
+      title: 'Nuevo proyecto',
       description: '',
       img: '',
       imgAlt: '',
