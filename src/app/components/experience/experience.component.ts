@@ -33,6 +33,12 @@ export class ExperienceComponent implements OnInit {
   }
 
   // Funciones de la sección.
+  addExperience(experience: Experience) {
+    this.experiences.push(experience);
+  }
+  deleteExperience(experience: Experience) {
+    this.experiences = this.experiences.filter((e) => e !== experience);
+  }
   addParagraph(experience: Experience, paragraph: string) {
     if (paragraph) {
       experience.description.push(paragraph);

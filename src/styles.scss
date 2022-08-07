@@ -219,6 +219,12 @@ section {
       position: relative;
       z-index: 3;
       width: max-content;
+      li {
+        display: flex;
+        .delete-edu {
+          margin-right: 10px;
+        }
+      }
     }
     .panel {
       margin-left: 20px;

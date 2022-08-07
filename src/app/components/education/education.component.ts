@@ -33,6 +33,12 @@ export class EducationComponent implements OnInit {
   }
 
   // Funciones de la sección.
+  addEducation(education: Education) {
+    this.educations.push(education);
+  }
+  deleteEducation(education: Education) {
+    this.educations = this.educations.filter((e) => e !== education);
+  }
   addParagraph(education: Education, paragraph: string) {
     if (paragraph) {
       education.description.push(paragraph);

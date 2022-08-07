@@ -43,7 +43,9 @@ export class ProyectsComponent implements OnInit {
   }
   saveChanges(): void {
     this.editMode = false;
-    this.proyectService.saveChanges(this.proyects).subscribe();
+    this.proyects.forEach((proyect) =>
+      this.proyectService.saveChanges(proyect).subscribe()
+    );
   }
   cancelChanges() {
     this.editMode = false;
