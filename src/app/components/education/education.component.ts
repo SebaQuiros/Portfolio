@@ -36,7 +36,7 @@ export class EducationComponent implements OnInit {
   addEducation() {
     let newEducation: Education = {
       id: this.educations.length,
-      button: 'Nueva experiencia',
+      button: 'Nueva educación',
       occupation: '',
       title: '',
       link: '',

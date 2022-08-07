@@ -35,7 +35,7 @@ export class ExperienceComponent implements OnInit {
   // Funciones de la sección.
   addExperience() {
     let newExperience: Experience = {
-      id: this.experiences.length,
+      id: this.experiences.length + 1,
       button: 'Nueva experiencia',
       occupation: '',
       title: '',
@@ -72,6 +72,7 @@ export class ExperienceComponent implements OnInit {
     this.experiences.forEach((experience) =>
       this.experienceService.saveChanges(experience).subscribe()
     );
+    this.selectedExperience = this.experiences[this.experiences.length - 1];
   }
   cancelChanges() {
     this.editMode = false;
