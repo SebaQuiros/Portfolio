@@ -34,7 +34,6 @@ export class ProyectsComponent implements OnInit {
       link: '',
       title: '',
       description: '',
-      tools: [''],
       img: '',
       imgAlt: '',
     };
@@ -42,17 +41,17 @@ export class ProyectsComponent implements OnInit {
   }
   addTool(proyect: Proyect, tool: string) {
     if (tool) {
-      proyect.tools.push(tool);
+      proyect.tools!.push(tool);
     }
   }
   deleteTool(proyect: Proyect, tool: string) {
-    proyect.tools = proyect.tools.filter((t) => t !== tool);
+    proyect.tools = proyect.tools!.filter((t) => t !== tool);
   }
 
   // Menú de cambios.
   editStart() {
     this.editMode = true;
-    console.log('Editing skills');
+    console.log('Editing proyects');
   }
   saveChanges(): void {
     this.editMode = false;

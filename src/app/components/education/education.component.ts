@@ -62,7 +62,7 @@ export class EducationComponent implements OnInit {
   // Menú de cambios.
   editStart() {
     this.editMode = true;
-    console.log('Editing skills');
+    console.log('Editing education');
   }
   saveChanges(): void {
     this.editMode = false;

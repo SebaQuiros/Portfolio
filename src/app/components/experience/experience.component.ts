@@ -65,7 +65,7 @@ export class ExperienceComponent implements OnInit {
   // Menú de cambios.
   editStart() {
     this.editMode = true;
-    console.log('Editing skills');
+    console.log('Editing experience');
   }
   saveChanges(): void {
     this.editMode = false;

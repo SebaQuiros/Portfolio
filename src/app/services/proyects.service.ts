@@ -24,10 +24,10 @@ export class ProyectsService {
   }
 
   // Update changes made by the component
-  saveChanges(experiences: Proyect): Observable<Proyect[]> {
-    return this.http.patch<Proyect[]>(
+  saveChanges(proyect: Proyect): Observable<Proyect[]> {
+    return this.http.put<Proyect[]>(
       this.proyectsUrl,
-      experiences,
+      proyect,
       this.httpOptions
     );
   }

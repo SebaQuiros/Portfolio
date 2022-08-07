@@ -4,7 +4,7 @@ export interface Proyect {
   link: string;
   title: string;
   description: string;
-  tools: string[];
+  tools?: string[];
   img: string;
   imgAlt: string;
 }
