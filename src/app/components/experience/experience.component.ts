@@ -14,6 +14,14 @@ export class ExperienceComponent implements OnInit {
 
   experiences: Experience[] = [];
   selectedExperience?: Experience;
+  newExperience: Experience = {
+    button: 'Nueva experiencia',
+    occupation: '',
+    title: '',
+    link: '',
+    subtitle: '',
+    duration: '',
+  };
   newParagraph: string = '';
 
   constructor(private experienceService: ExperienceService) {}
@@ -33,19 +41,19 @@ export class ExperienceComponent implements OnInit {
   }
 
   // Funciones de la sección.
-  addExperience(experience: Experience) {
-    this.experiences.push(experience);
+  addExperience() {
+    this.experiences.push(this.newExperience);
   }
   deleteExperience(experience: Experience) {
     this.experiences = this.experiences.filter((e) => e !== experience);
   }
   addParagraph(experience: Experience, paragraph: string) {
     if (paragraph) {
-      experience.description.push(paragraph);
+      experience.description!.push(paragraph);
     }
   }
   deleteParagraph(experience: Experience, paragraph: string) {
-    experience.description = experience.description.filter(
+    experience.description = experience.description!.filter(
       (t) => t !== paragraph
     );
   }

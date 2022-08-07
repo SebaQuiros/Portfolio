@@ -1,6 +1,8 @@
 .edit-menu {
+  display: flex;
   width: max-content;
   height: max-content;
+  align-items: center;
   .buttons-container {
     display: flex;
     background-color: var(--color-highlight-transparent);
@@ -8,5 +10,8 @@
     button {
       padding: 12px;
     }
+  }
+  .add-option {
+    margin-left: 12px;
   }
 }

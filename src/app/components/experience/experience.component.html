@@ -2,10 +2,12 @@
   <header class="section-header">
     <app-section-title number="02." text="Experiencia"></app-section-title>
     <app-edit-menu
+      [addOption]="true"
       *ngIf="login"
       (editStart)="editStart()"
       (saveChanges)="saveChanges()"
       (cancelChanges)="cancelChanges()"
+      (addFunction)="addExperience()"
     ></app-edit-menu>
   </header>
   <div class="inner">
@@ -53,7 +55,7 @@
               id="occupation"
               type="text"
               name="occupation"
-              placeholder="occupation"
+              placeholder="Texto del menú"
             />
           </div>
           <div class="edit-information">
@@ -62,28 +64,28 @@
               id="occupation"
               type="text"
               name="occupation"
-              placeholder="occupation"
+              placeholder="Ocupación"
             />
             <input
               [(ngModel)]="selectedExperience.title"
               id="title"
               type="text"
               name="title"
-              placeholder="title"
+              placeholder="Título"
             />
             <input
               [(ngModel)]="selectedExperience.subtitle"
               id="subtitle"
               type="text"
               name="subtitle"
-              placeholder="subtitle"
+              placeholder="Subtítulo"
             />
             <input
               [(ngModel)]="selectedExperience.duration"
               id="duration"
               type="text"
               name="duration"
-              placeholder="duration"
+              placeholder="Duración (AAAA-AAAA)"
             />
             <input
               [(ngModel)]="selectedExperience.link"
