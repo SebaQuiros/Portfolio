@@ -13,6 +13,7 @@ export class ProyectsComponent implements OnInit {
   editMode: boolean = false;
 
   proyects: Proyect[] = [];
+  newTool: string = '';
 
   constructor(private proyectService: ProyectsService) {}
 
@@ -41,7 +42,11 @@ export class ProyectsComponent implements OnInit {
   }
   addTool(proyect: Proyect, tool: string) {
     if (tool) {
-      proyect.tools!.push(tool);
+      if (!proyect.tools) {
+        proyect.tools = [`${tool}`];
+      } else {
+        proyect.tools!.push(tool);
+      }
     }
   }
   deleteTool(proyect: Proyect, tool: string) {

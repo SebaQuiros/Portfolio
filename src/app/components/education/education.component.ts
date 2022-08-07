@@ -51,7 +51,11 @@ export class EducationComponent implements OnInit {
   }
   addParagraph(education: Education, paragraph: string) {
     if (paragraph) {
-      education.description!.push(paragraph);
+      if (!education.description) {
+        education.description = [`${paragraph}`];
+      } else {
+        education.description!.push(paragraph);
+      }
     }
   }
   deleteParagraph(education: Education, paragraph: string) {

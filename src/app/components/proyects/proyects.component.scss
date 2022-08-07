@@ -50,11 +50,15 @@
             margin: 25px 0px 10px;
             padding: 0px;
             li {
+              display: flex;
               margin: 0px 20px 5px 0px;
               color: var(--color-secondary);
               font-family: var(--font-mono);
               font-size: var(--font-size-xs);
               white-space: nowrap;
+              button {
+                margin-left: 10px;
+              }
             }
             li::before {
               position: relative;
@@ -108,7 +112,11 @@
             .project-tech-list {
               justify-content: flex-end;
               li {
+                display: flex;
                 margin: 0px 0px 5px 20px;
+                button {
+                  margin-left: 10px;
+                }
               }
             }
           }
