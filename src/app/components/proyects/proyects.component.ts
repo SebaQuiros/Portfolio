@@ -40,6 +40,11 @@ export class ProyectsComponent implements OnInit {
     };
     this.proyects.push(newProyect);
   }
+  deleteProyect(proyect: Proyect) {
+    this.proyectService.deleteProyect(proyect).subscribe(() => {
+      this.proyects = this.proyects.filter((e) => e !== proyect);
+    });
+  }
   addTool(proyect: Proyect, tool: string) {
     if (tool) {
       if (!proyect.tools) {

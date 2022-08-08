@@ -23,6 +23,11 @@ export class ProyectsService {
     return this.http.get<Proyect[]>(this.proyectsUrl);
   }
 
+  deleteProyect(proyect: Proyect): Observable<Proyect> {
+    const url = `${this.proyectsUrl}/${proyect.id}`;
+    return this.http.delete<Proyect>(url);
+  }
+
   // Update changes made by the component
   saveChanges(proyect: Proyect): Observable<Proyect[]> {
     return this.http.put<Proyect[]>(
