@@ -13,6 +13,56 @@
   <div class="inner">
     <ul class="featured-proyects">
       <li class="project" *ngFor="let proyect of proyects.reverse()">
+        <div class="edition-controls" *ngIf="editMode">
+          <div class="edit-title">
+            <input
+              [(ngModel)]="proyect.type"
+              id="occupation"
+              type="text"
+              name="occupation"
+              placeholder="occupation"
+            />
+            <input
+              [(ngModel)]="proyect.link"
+              id="occupation"
+              type="text"
+              name="occupation"
+              placeholder="occupation"
+            />
+            <input
+              [(ngModel)]="proyect.title"
+              id="occupation"
+              type="text"
+              name="occupation"
+              placeholder="occupation"
+            />
+          </div>
+          <div class="edit-description" *ngIf="editMode">
+            <input
+              [(ngModel)]="proyect.description"
+              id="occupation"
+              type="text"
+              name="occupation"
+              placeholder="occupation"
+            />
+          </div>
+          <div class="edit-image" *ngIf="editMode">
+            <input
+              [(ngModel)]="proyect.img"
+              id="occupation"
+              type="text"
+              name="occupation"
+              placeholder="occupation"
+            />
+            <input
+              [(ngModel)]="proyect.imgAlt"
+              id="occupation"
+              type="text"
+              name="occupation"
+              placeholder="occupation"
+            />
+          </div>
+        </div>
         <div class="project-content">
           <div class="project-title">
             <span>{{ proyect.type }}</span>
@@ -74,6 +124,32 @@
               </button>
             </li>
           </ul>
+          <div class="edit-tools" *ngIf="editMode">
+            <input
+              [(ngModel)]="newTool"
+              id="newTool"
+              type="text"
+              name="newTool"
+              placeholder="Nueva herramienta"
+            />
+            <button (click)="addTool(proyect, newTool)" class="btn-edit">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-plus-circle"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                />
+                <path
+                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
         <div class="project-image">
           <a [href]="proyect.link" target="_blank" rel="noreferrer"

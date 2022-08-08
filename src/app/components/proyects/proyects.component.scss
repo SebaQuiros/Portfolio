@@ -13,6 +13,20 @@
         &:not(:last-of-type) {
           margin-bottom: 100px;
         }
+        .edition-controls {
+          grid-column: 1/13;
+          display: grid;
+          gap: 10px;
+          z-index: 4;
+          .edit-title {
+            display: flex;
+            gap: 10px;
+          }
+          .edit-image {
+            display: flex;
+            gap: 10px;
+          }
+        }
         .project-content {
           position: relative;
           grid-area: 1 / 1 / -1 / 7;
@@ -40,6 +54,12 @@
             font-size: var(--font-size-md);
             p {
               margin: 0px;
+            }
+          }
+          .edit-tools {
+            display: flex;
+            button {
+              margin-left: 10px;
             }
           }
           .project-tech-list {
