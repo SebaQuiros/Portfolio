@@ -1,76 +1,76 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Proyect } from 'src/app/interfaces/proyect';
-import { ProyectsService } from 'src/app/services/proyects.service';
+import { project } from 'src/app/interfaces/project';
+import { projectsService } from 'src/app/services/projects.service';
 
 @Component({
-  selector: 'app-proyects',
-  templateUrl: './proyects.component.html',
-  styleUrls: ['./proyects.component.scss'],
+  selector: 'app-projects',
+  templateUrl: './projects.component.html',
+  styleUrls: ['./projects.component.scss'],
 })
-export class ProyectsComponent implements OnInit {
+export class projectsComponent implements OnInit {
   login: boolean = true;
   editMode: boolean = false;
 
-  proyects: Proyect[] = [];
+  projects: project[] = [];
   newTool: string = '';
 
-  constructor(private proyectService: ProyectsService) {}
+  constructor(private projectService: projectsService) {}
 
   ngOnInit(): void {
-    this.getProyects();
+    this.getprojects();
   }
 
-  getProyects() {
-    this.proyectService
-      .getProyects()
-      .subscribe((proyects) => (this.proyects = proyects));
+  getprojects() {
+    this.projectService
+      .getprojects()
+      .subscribe((projects) => (this.projects = projects));
   }
 
   // Funciones de la sección.
-  addProyect() {
-    let newProyect: Proyect = {
-      id: this.proyects.length + 1,
+  addproject() {
+    let newproject: project = {
+      id: this.projects.length + 1,
       type: 'Ejemplo',
       link: '',
-      title: 'Nuevo proyecto',
+      title: 'Nuevo projecto',
       description: '',
       img: '',
       imgAlt: '',
     };
-    this.proyects.push(newProyect);
+    this.projects.push(newproject);
   }
-  deleteProyect(proyect: Proyect) {
-    this.proyectService.deleteProyect(proyect).subscribe(() => {
-      this.proyects = this.proyects.filter((e) => e !== proyect);
+  deleteproject(project: project) {
+    this.projectService.deleteproject(project).subscribe(() => {
+      this.projects = this.projects.filter((e) => e !== project);
     });
   }
-  addTool(proyect: Proyect, tool: string) {
+  addTool(project: project, tool: string) {
     if (tool) {
-      if (!proyect.tools) {
-        proyect.tools = [`${tool}`];
+      if (!project.tools) {
+        project.tools = [`${tool}`];
       } else {
-        proyect.tools!.push(tool);
+        project.tools!.push(tool);
       }
     }
   }
-  deleteTool(proyect: Proyect, tool: string) {
-    proyect.tools = proyect.tools!.filter((t) => t !== tool);
+  deleteTool(project: project, tool: string) {
+    project.tools = project.tools!.filter((t) => t !== tool);
   }
 
   // Menú de cambios.
   editStart() {
     this.editMode = true;
-    console.log('Editing proyects');
+    console.log('Editing projects');
   }
   saveChanges(): void {
     this.editMode = false;
-    this.proyects.forEach((proyect) =>
-      this.proyectService.saveChanges(proyect).subscribe()
+    this.projects.forEach((project) =>
+      this.projectService.saveChanges(project).subscribe()
     );
   }
   cancelChanges() {
     this.editMode = false;
-    this.getProyects();
+    this.getprojects();
   }
 }

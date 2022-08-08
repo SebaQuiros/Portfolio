@@ -1,36 +1,36 @@
-<section id="sec-05-proyects">
+<section id="sec-05-projects">
   <header class="section-header">
-    <app-section-title number="05." text="Proyectos"></app-section-title>
+    <app-section-title number="05." text="projectos"></app-section-title>
     <app-edit-menu
       [addOption]="true"
       *ngIf="login"
       (editStart)="editStart()"
       (saveChanges)="saveChanges()"
       (cancelChanges)="cancelChanges()"
-      (addFunction)="addProyect()"
+      (addFunction)="addproject()"
     ></app-edit-menu>
   </header>
   <div class="inner">
-    <ul class="featured-proyects">
-      <li class="project" *ngFor="let proyect of proyects.reverse()">
+    <ul class="featured-projects">
+      <li class="project" *ngFor="let project of projects.reverse()">
         <div class="edition-controls" *ngIf="editMode">
           <div class="edit-title">
             <input
-              [(ngModel)]="proyect.type"
+              [(ngModel)]="project.type"
               id="occupation"
               type="text"
               name="occupation"
-              placeholder="Tipo de proyecto"
+              placeholder="Tipo de projecto"
             />
             <input
-              [(ngModel)]="proyect.link"
+              [(ngModel)]="project.link"
               id="occupation"
               type="text"
               name="occupation"
               placeholder="Link de internet"
             />
             <input
-              [(ngModel)]="proyect.title"
+              [(ngModel)]="project.title"
               id="occupation"
               type="text"
               name="occupation"
@@ -39,7 +39,7 @@
           </div>
           <div class="edit-description" *ngIf="editMode">
             <input
-              [(ngModel)]="proyect.description"
+              [(ngModel)]="project.description"
               id="occupation"
               type="text"
               name="occupation"
@@ -48,14 +48,14 @@
           </div>
           <div class="edit-image" *ngIf="editMode">
             <input
-              [(ngModel)]="proyect.img"
+              [(ngModel)]="project.img"
               id="occupation"
               type="text"
               name="occupation"
               placeholder="URL de la imagen"
             />
             <input
-              [(ngModel)]="proyect.imgAlt"
+              [(ngModel)]="project.imgAlt"
               id="occupation"
               type="text"
               name="occupation"
@@ -65,14 +65,14 @@
         </div>
         <div class="project-content">
           <div class="project-title">
-            <span>{{ proyect.type }}</span>
+            <span>{{ project.type }}</span>
             <h3>
-              <a [href]="proyect.link" target="_blank" rel="noreferrer">{{
-                proyect.title
+              <a [href]="project.link" target="_blank" rel="noreferrer">{{
+                project.title
               }}</a>
             </h3>
             <button
-              (click)="deleteProyect(proyect)"
+              (click)="deleteproject(project)"
               *ngIf="editMode"
               class="btn-edit delete-content"
             >
@@ -95,14 +95,14 @@
           </div>
           <div class="project-description">
             <p>
-              {{ proyect.description }}
+              {{ project.description }}
             </p>
           </div>
           <ul class="project-tech-list bullet-list">
-            <li *ngFor="let tool of proyect.tools">
+            <li *ngFor="let tool of project.tools">
               {{ tool }}
               <button
-                (click)="deleteTool(proyect, tool)"
+                (click)="deleteTool(project, tool)"
                 *ngIf="editMode"
                 class="btn-edit"
               >
@@ -132,7 +132,7 @@
               name="newTool"
               placeholder="Nueva herramienta"
             />
-            <button (click)="addTool(proyect, newTool)" class="btn-edit">
+            <button (click)="addTool(project, newTool)" class="btn-edit">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -152,9 +152,9 @@
           </div>
         </div>
         <div class="project-image">
-          <a [href]="proyect.link" target="_blank" rel="noreferrer"
+          <a [href]="project.link" target="_blank" rel="noreferrer"
             ><div class="img-wrapper">
-              <img [src]="proyect.img" [alt]="proyect.imgAlt" /></div
+              <img [src]="project.img" [alt]="project.imgAlt" /></div
           ></a>
         </div>
       </li>

@@ -14,7 +14,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ExperienceComponent } from './components/experience/experience.component';
 import { EducationComponent } from './components/education/education.component';
 import { SkillsComponent } from './components/skills/skills.component';
-import { ProyectsComponent } from './components/proyects/proyects.component';
+import { projectsComponent } from './components/projects/projects.component';
 import { SectionTitleComponent } from './components/children/section-title/section-title.component';
 import { EditMenuComponent } from './components/children/edit-menu/edit-menu.component';
 
@@ -30,7 +30,7 @@ import { EditMenuComponent } from './components/children/edit-menu/edit-menu.com
     ExperienceComponent,
     EducationComponent,
     SkillsComponent,
-    ProyectsComponent,
+    projectsComponent,
     SectionTitleComponent,
     EditMenuComponent,
   ],
