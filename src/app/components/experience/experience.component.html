@@ -135,7 +135,17 @@
         <span>{{ selectedExperience.duration }}</span>
         <ul class="panel-list bullet-list">
           <li *ngFor="let paragraph of selectedExperience.description">
-            {{ paragraph }}
+            <div *ngIf="!editMode">
+              {{ paragraph }}
+            </div>
+            <input
+              *ngIf="editMode"
+              {{paragraph}}
+              id="paragraph"
+              type="text"
+              name="paragraph"
+              placeholder="Párrafo"
+            />
             <button
               (click)="deleteParagraph(selectedExperience, paragraph)"
               *ngIf="editMode"
