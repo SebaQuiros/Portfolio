@@ -9,7 +9,7 @@ import { Proyect } from '../interfaces/proyect';
   providedIn: 'root',
 })
 export class ProyectsService {
-  private proyectsUrl = 'http://localhost:5000/proyects';
+  private proyectsUrl = 'http://localhost:8080/projects';
 
   httpOptions = {
     headers: new HttpHeaders({
