@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { project } from 'src/app/interfaces/project';
+import { Project } from 'src/app/interfaces/project';
 import { projectsService } from 'src/app/services/projects.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class projectsComponent implements OnInit {
   login: boolean = true;
   editMode: boolean = false;
 
-  projects: project[] = [];
+  projects: Project[] = [];
   newTool: string = '';
 
   constructor(private projectService: projectsService) {}
@@ -29,7 +29,7 @@ export class projectsComponent implements OnInit {
 
   // Funciones de la sección.
   addproject() {
-    let newproject: project = {
+    let newproject: Project = {
       id: this.projects.length + 1,
       type: 'Ejemplo',
       link: '',
@@ -40,12 +40,12 @@ export class projectsComponent implements OnInit {
     };
     this.projects.push(newproject);
   }
-  deleteproject(project: project) {
+  deleteproject(project: Project) {
     this.projectService.deleteproject(project).subscribe(() => {
       this.projects = this.projects.filter((e) => e !== project);
     });
   }
-  addTool(project: project, tool: string) {
+  addTool(project: Project, tool: string) {
     if (tool) {
       if (!project.tools) {
         project.tools = [`${tool}`];
@@ -54,7 +54,7 @@ export class projectsComponent implements OnInit {
       }
     }
   }
-  deleteTool(project: project, tool: string) {
+  deleteTool(project: Project, tool: string) {
     project.tools = project.tools!.filter((t) => t !== tool);
   }
 

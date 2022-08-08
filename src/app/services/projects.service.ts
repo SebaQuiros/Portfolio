@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
-import { project } from '../interfaces/project';
+import { Project } from '../interfaces/project';
 
 @Injectable({
   providedIn: 'root',
@@ -19,17 +19,17 @@ export class projectsService {
 
   constructor(private http: HttpClient) {}
 
-  getprojects(): Observable<project[]> {
-    return this.http.get<project[]>(this.projectsUrl);
+  getprojects(): Observable<Project[]> {
+    return this.http.get<Project[]>(this.projectsUrl);
   }
 
-  deleteproject(project: project): Observable<project> {
+  deleteproject(project: Project): Observable<Project> {
     const url = `${this.projectsUrl}/${project.id}`;
-    return this.http.delete<project>(url);
+    return this.http.delete<Project>(url);
   }
 
   // Update changes made by the component
-  saveChanges(project: project): Observable<project> {
-    return this.http.put<project>(this.projectsUrl, project, this.httpOptions);
+  saveChanges(project: Project): Observable<Project> {
+    return this.http.put<Project>(this.projectsUrl, project, this.httpOptions);
   }
 }
