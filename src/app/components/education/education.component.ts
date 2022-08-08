@@ -47,7 +47,9 @@ export class EducationComponent implements OnInit {
     this.selectedEducation = this.educations[this.educations.length - 1];
   }
   deleteEducation(education: Education) {
-    this.educations = this.educations.filter((e) => e !== education);
+    this.educationService.deleteEducation(education).subscribe(() => {
+      this.educations = this.educations.filter((e) => e !== education);
+    });
   }
   addParagraph(education: Education, paragraph: string) {
     if (paragraph) {
@@ -73,6 +75,7 @@ export class EducationComponent implements OnInit {
     this.educations.forEach((education) =>
       this.educationService.saveChanges(education).subscribe()
     );
+    this.selectedEducation = this.educations[this.educations.length - 1];
   }
   cancelChanges() {
     this.editMode = false;

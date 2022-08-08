@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Education } from '../interfaces/education';
 
@@ -9,7 +9,7 @@ import { Education } from '../interfaces/education';
   providedIn: 'root',
 })
 export class EducationService {
-  private educationsUrl = 'http://localhost:5000/educations';
+  private educationsUrl = 'http://localhost:8080/educations';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -23,9 +23,14 @@ export class EducationService {
     return this.http.get<Education[]>(this.educationsUrl);
   }
 
+  deleteEducation(education: Education): Observable<Education> {
+    const url = `${this.educationsUrl}/${education.id}`;
+    return this.http.delete<Education>(url);
+  }
+
   // Update changes made by the component
-  saveChanges(education: Education): Observable<Education[]> {
-    return this.http.put<Education[]>(
+  saveChanges(education: Education): Observable<Education> {
+    return this.http.put<Education>(
       this.educationsUrl,
       education,
       this.httpOptions

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Experience } from 'src/app/interfaces/experience';
 
@@ -29,8 +29,8 @@ export class ExperienceService {
   }
 
   // Update changes made by the component
-  saveChanges(experience: Experience): Observable<Experience[]> {
-    return this.http.put<Experience[]>(
+  saveChanges(experience: Experience): Observable<Experience> {
+    return this.http.put<Experience>(
       this.experiencesUrl,
       experience,
       this.httpOptions
