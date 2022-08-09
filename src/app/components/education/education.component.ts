@@ -42,8 +42,9 @@ export class EducationComponent implements OnInit {
       subtitle: '',
       duration: '',
     };
-    this.educationService.saveChanges(newEducation).subscribe();
-    this.getEducations();
+    this.educationService
+      .addEducation(newEducation)
+      .subscribe(() => this.getEducations());
     this.selectedEducation = this.educations[this.educations.length - 1];
   }
   deleteEducation(education: Education) {

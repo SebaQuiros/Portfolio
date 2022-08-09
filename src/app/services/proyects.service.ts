@@ -23,6 +23,14 @@ export class ProyectsService {
     return this.http.get<Proyect[]>(this.proyectsUrl);
   }
 
+  addProyect(education: Proyect): Observable<Proyect> {
+    return this.http.post<Proyect>(
+      this.proyectsUrl,
+      education,
+      this.httpOptions
+    );
+  }
+
   deleteProyect(proyect: Proyect): Observable<Proyect> {
     const url = `${this.proyectsUrl}/${proyect.id}`;
     return this.http.delete<Proyect>(url);

@@ -39,9 +39,13 @@
               color: var(--color-highlight);
             }
             h3 {
+              display: flex;
               font-size: 28px;
               margin-top: 10px;
               padding-right: 150px;
+              button {
+                margin-left: 10px;
+              }
             }
           }
           .project-description {

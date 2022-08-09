@@ -23,6 +23,14 @@ export class EducationService {
     return this.http.get<Education[]>(this.educationsUrl);
   }
 
+  addEducation(education: Education): Observable<Education> {
+    return this.http.post<Education>(
+      this.educationsUrl,
+      education,
+      this.httpOptions
+    );
+  }
+
   deleteEducation(education: Education): Observable<Education> {
     const url = `${this.educationsUrl}/${education.id}`;
     return this.http.delete<Education>(url);
