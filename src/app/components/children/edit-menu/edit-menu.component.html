@@ -54,7 +54,7 @@
     </button>
   </div>
   <div *ngIf="addOption" class="add-option">
-    <button class="btn-edit" *ngIf="editing" (click)="addContent()">
+    <button class="btn-edit" *ngIf="!editing" (click)="addContent()">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
