@@ -1,5 +1,5 @@
 export interface Education {
-  id: number;
+  id?: number;
   button: string;
   occupation: string;
   title: string;
