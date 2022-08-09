@@ -1,5 +1,5 @@
 export interface SkillSet {
-  id: number;
+  id?: number;
   type: string;
   title: string;
   description: string;

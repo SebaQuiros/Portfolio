@@ -1,5 +1,5 @@
 export interface Proyect {
-  id: number;
+  id?: number;
   type: string;
   link: string;
   title: string;

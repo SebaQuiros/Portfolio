@@ -35,7 +35,6 @@ export class EducationComponent implements OnInit {
   // Funciones de la sección.
   addEducation() {
     let newEducation: Education = {
-      id: this.educations.length + 1,
       button: 'Nueva educación',
       occupation: '',
       title: '',
@@ -43,7 +42,8 @@ export class EducationComponent implements OnInit {
       subtitle: '',
       duration: '',
     };
-    this.educations.push(newEducation);
+    this.educationService.saveChanges(newEducation).subscribe();
+    this.getEducations();
     this.selectedEducation = this.educations[this.educations.length - 1];
   }
   deleteEducation(education: Education) {
