@@ -36,6 +36,22 @@
       </p>
     </div>
     <div class="about-img">
+      <div class="edit-image" *ngIf="editMode">
+        <input
+          [(ngModel)]="about.img"
+          id="img"
+          type="text"
+          name="img"
+          placeholder="URL de la imagen"
+        />
+        <input
+          [(ngModel)]="about.imgAlt"
+          id="img"
+          type="text"
+          name="img"
+          placeholder="Alternativa de imagen por accesibilidad"
+        />
+      </div>
       <div class="img-background">
         <div class="my-image">
           <div style="max-width: 500px; display: block">

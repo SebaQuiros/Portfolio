@@ -1,7 +1,36 @@
 <section id="sec-00-home">
+  <app-edit-menu
+    *ngIf="login"
+    (editStart)="editStart()"
+    (saveChanges)="saveChanges()"
+    (cancelChanges)="cancelChanges()"
+  ></app-edit-menu>
+  <div class="edit-controls" *ngIf="editMode">
+    <input
+      [(ngModel)]="about.fullName"
+      id="fullName"
+      type="text"
+      name="fullName"
+      placeholder="Nombre y apellido"
+    />
+    <input
+      [(ngModel)]="about.occupation"
+      id="occupation"
+      type="text"
+      name="occupation"
+      placeholder="Ocupación"
+    />
+    <input
+      [(ngModel)]="about.mail"
+      id="mail"
+      type="text"
+      name="mail"
+      placeholder="Correo electrónico"
+    />
+  </div>
   <span class="home-intro">Hola, mi nombre es</span>
-  <h1>{{ fullName }}</h1>
-  <span class="home-subtitle">{{ occupation }}</span>
+  <h1>{{ about.fullName }}</h1>
+  <span class="home-subtitle">{{ about.occupation }}</span>
   <p>
     Amo aprender y mi pasión es crear. Uno de mis intereses es la impresión 3D y
     tengo un emprendimiento llamado
@@ -10,7 +39,7 @@
     >. Estudio arquitectura y diseño industrial. Actualmente busco trabajo en el
     mundo de la programación y el desarrollo web.
   </p>
-  <a href="mailto:sebaquiros@gmail.com" target="_blank"
+  <a [href]="emailstring" target="_blank"
     ><button class="btn-regular">¿Hablamos?</button></a
   >
 </section>

@@ -9,7 +9,7 @@ import { About } from '../interfaces/about';
   providedIn: 'root',
 })
 export class AboutService {
-  private aboutUrl = 'http://localhost:5000/about';
+  private aboutUrl = 'http://localhost:8080/about';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -19,8 +19,9 @@ export class AboutService {
 
   constructor(private http: HttpClient) {}
 
-  getAbout(): Observable<About> {
-    return this.http.get<About>(this.aboutUrl);
+  getAbout(): Observable<About[]> {
+    console.log('About service');
+    return this.http.get<About[]>(this.aboutUrl);
   }
 
   // Update changes made by the component

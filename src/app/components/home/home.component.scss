@@ -1,4 +1,7 @@
 #sec-00-home {
+  app-edit-menu {
+    margin-bottom: 20px;
+  }
   min-height: 100vh;
   padding: 0px;
   display: flex;
@@ -16,6 +19,13 @@
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-heavy);
     color: var(--color-secondary);
+  }
+  .edit-controls {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: fit-content;
   }
   p {
     font-size: var(--font-size-lg);

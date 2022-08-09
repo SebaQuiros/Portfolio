@@ -12,7 +12,13 @@ export class AboutComponent implements OnInit {
   login: boolean = true;
   editMode: boolean = false;
 
-  about: About = { img: '', imgAlt: '' };
+  about: About = {
+    fullName: '',
+    occupation: '',
+    mail: '',
+    img: '',
+    imgAlt: '',
+  };
 
   constructor(private aboutService: AboutService) {}
 
@@ -22,7 +28,7 @@ export class AboutComponent implements OnInit {
 
   getAbout() {
     this.aboutService.getAbout().subscribe((about) => {
-      this.about = about;
+      this.about = about[0];
     });
   }
 
