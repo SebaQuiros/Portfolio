@@ -30,7 +30,7 @@ export class ProyectsComponent implements OnInit {
   // Funciones de la sección.
   addProyect() {
     let newProyect: Proyect = {
-      // id: this.proyects.length + 1,
+      id: this.proyects.length + 1,
       type: 'Ejemplo',
       link: '',
       title: 'Nuevo proyecto',
@@ -38,10 +38,7 @@ export class ProyectsComponent implements OnInit {
       img: '',
       imgAlt: '',
     };
-    this.proyectService.saveChanges(newProyect).subscribe(() => {
-      this.proyects.push(newProyect);
-    });
-    this.getProyects();
+    this.proyects.push(newProyect);
   }
   deleteProyect(proyect: Proyect) {
     this.proyectService.deleteProyect(proyect).subscribe(() => {
