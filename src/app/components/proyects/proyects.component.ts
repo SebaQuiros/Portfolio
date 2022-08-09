@@ -34,7 +34,7 @@ export class ProyectsComponent implements OnInit {
       type: 'Ejemplo',
       link: '',
       title: 'Nuevo proyecto',
-      description: '',
+      description: 'Lorem ipsum',
       img: '',
       imgAlt: '',
     };
