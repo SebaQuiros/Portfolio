@@ -1,12 +1,12 @@
 #sec-00-home {
-  app-edit-menu {
-    margin-bottom: 20px;
-  }
   min-height: 100vh;
   padding: 0px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  app-edit-menu {
+    margin-bottom: 20px;
+  }
   .home-intro {
     font-family: var(--font-mono);
     font-size: var(--font-size-sm);
@@ -34,5 +34,23 @@
   }
   > a {
     margin-top: 50px;
+  }
+}
+@media (max-width: 768px) {
+  #sec-00-home {
+    app-edit-menu {
+    }
+    .home-intro {
+    }
+    h1 {
+    }
+    .home-subtitle {
+    }
+    .edit-controls {
+    }
+    p {
+    }
+    > a {
+    }
   }
 }
