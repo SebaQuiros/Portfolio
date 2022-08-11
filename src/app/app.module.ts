@@ -17,6 +17,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectsComponent } from './components/proyects/proyects.component';
 import { SectionTitleComponent } from './components/children/section-title/section-title.component';
 import { EditMenuComponent } from './components/children/edit-menu/edit-menu.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,9 +34,14 @@ import { EditMenuComponent } from './components/children/edit-menu/edit-menu.com
     ProyectsComponent,
     SectionTitleComponent,
     EditMenuComponent,
+    LoginComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  toggleLoginForm() {
+    console.log('hola');
+  }
+}
