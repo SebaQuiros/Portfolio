@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header (loginForm)="toggleLoginForm()"></app-header>
+<app-login *ngIf="showLoginForm"></app-login>
 <main>
   <app-home> </app-home>
   <app-about></app-about>
