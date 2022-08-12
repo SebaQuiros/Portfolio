@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  showLoginForm: Boolean = false;
+  showLoginForm: Boolean = true;
 
   toggleLoginForm() {
     this.showLoginForm = !this.showLoginForm;
