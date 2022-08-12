@@ -1,0 +1,11 @@
+.login-form {
+  position: fixed;
+  width: 100%;
+  top: 150px;
+  display: flex;
+  justify-content: center;
+  .container {
+    width: 80%;
+    border: solid 1px;
+  }
+}
