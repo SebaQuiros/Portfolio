@@ -1,6 +1,26 @@
 <div class="login-form">
-  <form action="">
-    <input type="text" name="" id="" placeholder="Usuario" />
-    <input type="text" name="" id="" placeholder="Contraseña" />
+  <div class="login-description">
+    <h1>Modo edición</h1>
+    <p>
+      Para acceder al modo edición del portfolio es necesario iniciar sesión. Se
+      puede iniciar una sesión de prueba.
+    </p>
+  </div>
+  <form action="login" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      name="userName"
+      id="userName"
+      placeholder="Dirección de e-mail"
+      [(ngModel)]="user.mailUser"
+    />
+    <input
+      type="text"
+      name="passWord"
+      id="passWord"
+      placeholder="Contraseña"
+      [(ngModel)]="user.passwordUser"
+    />
+    <input type="submit" value="Iniciar sesión" class="btn btn-regular" />
   </form>
 </div>
