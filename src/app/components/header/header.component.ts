@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,16 +6,9 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() loginForm = new EventEmitter();
-
   showLoginForm: Boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  toggleLoginForm() {
-    this.showLoginForm = !this.showLoginForm;
-    this.loginForm.emit();
-  }
 }

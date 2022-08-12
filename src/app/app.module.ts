@@ -18,6 +18,7 @@ import { ProyectsComponent } from './components/proyects/proyects.component';
 import { SectionTitleComponent } from './components/children/section-title/section-title.component';
 import { EditMenuComponent } from './components/children/edit-menu/edit-menu.component';
 import { LoginComponent } from './components/login/login.component';
+import { MainSectionsComponent } from './main-sections/main-sections.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { LoginComponent } from './components/login/login.component';
     SectionTitleComponent,
     EditMenuComponent,
     LoginComponent,
+    MainSectionsComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, HttpClientModule],
   providers: [],
