@@ -20,7 +20,6 @@ export class AboutService {
   constructor(private http: HttpClient) {}
 
   getAbout(): Observable<About[]> {
-    console.log('About service');
     return this.http.get<About[]>(this.aboutUrl);
   }
 

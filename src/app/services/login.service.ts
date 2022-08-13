@@ -20,7 +20,6 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(user: User): Observable<User> {
-    console.log(user);
     return this.http.post<User>(this.loginUrl, user, this.httpOptions);
   }
 }

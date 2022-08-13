@@ -20,6 +20,10 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit() {
+    if (!this.user.mailUser.length || !this.user.passwordUser.length) {
+      alert('Llenar los campos es obligatorio.');
+      return;
+    }
     let newUser = this.user;
     this.loginService.login(newUser).subscribe();
   }

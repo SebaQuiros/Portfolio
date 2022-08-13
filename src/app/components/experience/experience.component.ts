@@ -59,6 +59,7 @@ export class ExperienceComponent implements OnInit {
       } else {
         experience.description!.push(paragraph);
       }
+      this.newParagraph = '';
     }
   }
   deleteParagraph(experience: Experience, paragraph: string) {

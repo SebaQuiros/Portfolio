@@ -31,6 +31,7 @@ export class SkillsComponent implements OnInit {
   addTool(skillSet: SkillSet, tool: string) {
     if (tool) {
       skillSet.tools.push(tool);
+      this.newTool = '';
     }
   }
   deleteTool(skillSet: SkillSet, tool: string) {

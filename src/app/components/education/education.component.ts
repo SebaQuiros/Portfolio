@@ -59,6 +59,7 @@ export class EducationComponent implements OnInit {
       } else {
         education.description!.push(paragraph);
       }
+      this.newParagraph = '';
     }
   }
   deleteParagraph(education: Education, paragraph: string) {
