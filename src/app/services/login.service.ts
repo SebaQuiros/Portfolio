@@ -20,9 +20,9 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  login(user: User): Observable<User> {
+  login(user: User): Observable<boolean> {
     console.log(user);
-    return this.http.post<User>(this.loginUrl, user, this.httpOptions);
+    return this.http.post<boolean>(this.loginUrl, user, this.httpOptions);
   }
 
   getLoginStatus(): boolean {
