@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Education } from 'src/app/interfaces/education';
 import { EducationService } from 'src/app/services/education.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-education',
@@ -16,10 +17,18 @@ export class EducationComponent implements OnInit {
   selectedEducation?: Education;
   newParagraph: string = '';
 
-  constructor(private educationService: EducationService) {}
+  constructor(
+    private educationService: EducationService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.getEducations();
+    this.getLoginStatus();
+  }
+
+  getLoginStatus() {
+    this.login = this.loginService.getLoginStatus();
   }
 
   getEducations() {

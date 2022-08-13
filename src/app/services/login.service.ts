@@ -9,6 +9,7 @@ import { User } from '../interfaces/user';
   providedIn: 'root',
 })
 export class LoginService {
+  loginStatus: boolean = false;
   private loginUrl = 'http://localhost:8080/login';
 
   httpOptions = {
@@ -20,6 +21,11 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(user: User): Observable<User> {
+    console.log(user);
     return this.http.post<User>(this.loginUrl, user, this.httpOptions);
+  }
+
+  getLoginStatus(): boolean {
+    return this.loginStatus;
   }
 }

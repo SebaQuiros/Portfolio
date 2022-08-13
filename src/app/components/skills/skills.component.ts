@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { SkillSet } from 'src/app/interfaces/skill-set';
 import { SkillsService } from 'src/app/services/skills.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-skills',
@@ -15,10 +16,18 @@ export class SkillsComponent implements OnInit {
   skills: SkillSet[] = [];
   newTool: string = '';
 
-  constructor(private skillsService: SkillsService) {}
+  constructor(
+    private skillsService: SkillsService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.getSkills();
+    this.getLoginStatus();
+  }
+
+  getLoginStatus() {
+    this.login = this.loginService.getLoginStatus();
   }
 
   getSkills() {

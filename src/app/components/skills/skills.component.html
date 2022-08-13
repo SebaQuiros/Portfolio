@@ -34,7 +34,7 @@
           {{ skillSet.title }}
           <button
             (click)="deleteSkillSet(skillSet)"
-            *ngIf="!editMode"
+            *ngIf="!editMode && login"
             class="btn-edit delete-content"
           >
             <svg

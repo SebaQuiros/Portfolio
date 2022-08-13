@@ -72,7 +72,7 @@
               }}</a>
               <button
                 (click)="deleteProyect(proyect)"
-                *ngIf="!editMode"
+                *ngIf="!editMode && login"
                 class="btn-edit delete-content"
               >
                 <svg

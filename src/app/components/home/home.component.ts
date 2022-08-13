@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { About } from 'src/app/interfaces/about';
 import { AboutService } from 'src/app/services/about.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-home',
@@ -22,10 +23,18 @@ export class HomeComponent implements OnInit {
 
   emailstring: string = `mailto:${this.about.mail}?Subject=Portfolio`;
 
-  constructor(private aboutService: AboutService) {}
+  constructor(
+    private aboutService: AboutService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.getAbout();
+    this.getLoginStatus();
+  }
+
+  getLoginStatus() {
+    this.login = this.loginService.getLoginStatus();
   }
 
   getAbout() {

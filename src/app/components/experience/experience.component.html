@@ -16,7 +16,7 @@
         <li *ngFor="let experience of experiences.reverse()">
           <button
             (click)="deleteExperience(experience)"
-            *ngIf="!editMode"
+            *ngIf="!editMode && login"
             class="btn-edit delete-content"
           >
             <svg

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Experience } from 'src/app/interfaces/experience';
 import { ExperienceService } from 'src/app/services/experience.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-experience',
@@ -16,10 +17,18 @@ export class ExperienceComponent implements OnInit {
   selectedExperience?: Experience;
   newParagraph: string = '';
 
-  constructor(private experienceService: ExperienceService) {}
+  constructor(
+    private experienceService: ExperienceService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.getExperiences();
+    this.getLoginStatus();
+  }
+
+  getLoginStatus() {
+    this.login = this.loginService.getLoginStatus();
   }
 
   getExperiences() {

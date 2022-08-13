@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Proyect } from 'src/app/interfaces/proyect';
 import { ProyectsService } from 'src/app/services/proyects.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-proyects',
@@ -15,10 +16,18 @@ export class ProyectsComponent implements OnInit {
   proyects: Proyect[] = [];
   newTool: string = '';
 
-  constructor(private proyectService: ProyectsService) {}
+  constructor(
+    private proyectService: ProyectsService,
+    private loginService: LoginService
+  ) {}
 
   ngOnInit(): void {
     this.getProyects();
+    this.getLoginStatus();
+  }
+
+  getLoginStatus() {
+    this.login = this.loginService.getLoginStatus();
   }
 
   getProyects() {
