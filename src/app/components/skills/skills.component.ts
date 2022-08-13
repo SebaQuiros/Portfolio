@@ -28,14 +28,33 @@ export class SkillsComponent implements OnInit {
   }
 
   // Funciones de la sección.
+  addSkillset() {
+    let newSkillset: SkillSet = {
+      type: '',
+      title: 'Nuevo Skillset',
+      description: 'Lorem ipsum',
+    };
+    this.skillsService
+      .addSkillSet(newSkillset)
+      .subscribe(() => this.getSkills());
+  }
+  deleteSkillSet(skillSet: SkillSet) {
+    this.skillsService.deleteSkillSet(skillSet).subscribe(() => {
+      this.skills = this.skills.filter((e) => e !== skillSet);
+    });
+  }
   addTool(skillSet: SkillSet, tool: string) {
     if (tool) {
-      skillSet.tools.push(tool);
+      if (!skillSet.tools) {
+        skillSet.tools = [`${tool}`];
+      } else {
+        skillSet.tools!.push(tool);
+      }
       this.newTool = '';
     }
   }
   deleteTool(skillSet: SkillSet, tool: string) {
-    skillSet.tools = skillSet.tools.filter((t) => t !== tool);
+    skillSet.tools = skillSet.tools!.filter((t) => t !== tool);
   }
 
   // Menú de cambios.

@@ -3,5 +3,5 @@ export interface SkillSet {
   type: string;
   title: string;
   description: string;
-  tools: string[];
+  tools?: string[];
 }

@@ -7,14 +7,25 @@
       }
       .set-title {
         margin-bottom: 20px;
+        .edit-title {
+          display: grid;
+          align-items: center;
+          grid-template-columns: 1fr 2fr;
+          gap: 20px;
+          margin-bottom: 20px;
+        }
         span {
           font-family: var(--font-mono);
           font-size: var(--font-size-xs);
           color: var(--color-highlight);
         }
         h3 {
+          display: flex;
           font-size: 28px;
           margin-top: 10px;
+          button {
+            margin-left: 10px;
+          }
         }
       }
       .edition-controls {

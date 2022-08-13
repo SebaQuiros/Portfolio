@@ -53,6 +53,7 @@ export class ProyectsComponent implements OnInit {
       } else {
         proyect.tools!.push(tool);
       }
+      this.newTool = '';
     }
   }
   deleteTool(proyect: Proyect, tool: string) {
