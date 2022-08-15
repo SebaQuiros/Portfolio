@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
       alert('Llenar los campos es obligatorio.');
       return;
     }
-    let newUser = this.user;
-    this.loginService.login(newUser).subscribe();
+    this.loginService.login(this.user).subscribe();
   }
 }

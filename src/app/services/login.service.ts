@@ -11,6 +11,7 @@ import { User } from '../interfaces/user';
 export class LoginService {
   loginStatus: boolean = false;
   private loginUrl = 'http://localhost:8080/login';
+  private addUserUrl = 'http://localhost:8080/addUser';
 
   httpOptions = {
     headers: new HttpHeaders({
