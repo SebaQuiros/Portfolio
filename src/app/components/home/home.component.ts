@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getAbout();
     this.getLoginStatus();
-    console.log(this.loginService.currentUser);
   }
 
   getLoginStatus() {
