@@ -10,10 +10,10 @@ import { User } from '../interfaces/user';
 })
 export class LoginService {
   currentUser: User = {
-    mailUser: '',
-    passwordUser: '',
-    // mailUser: 'sebaquiros@gmail.com',
-    // passwordUser: 'seba',
+    // mailUser: '',
+    // passwordUser: '',
+    mailUser: 'sebaquiros@gmail.com',
+    passwordUser: 'seba',
   };
   private loginUrl = 'http://localhost:8080/login';
   private addUserUrl = 'http://localhost:8080/addUser';
