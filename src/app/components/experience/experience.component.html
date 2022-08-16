@@ -13,7 +13,7 @@
   <div class="inner">
     <div class="tablist">
       <ul>
-        <li *ngFor="let experience of experiences.reverse()">
+        <li *ngFor="let experience of experiences">
           <button
             (click)="deleteExperience(experience)"
             *ngIf="!editMode && login"
