@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  login: boolean = true;
+  login: boolean = false;
   editMode: boolean = false;
 
   about: About = {
@@ -31,10 +31,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.getAbout();
     this.getLoginStatus();
+    console.log(this.loginService.currentUser);
   }
 
   getLoginStatus() {
-    this.login = this.loginService.getLoginStatus();
+    this.loginService
+      .getLoginStatus()
+      .subscribe((login) => (this.login = login));
   }
 
   getAbout() {

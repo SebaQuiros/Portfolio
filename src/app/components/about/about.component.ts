@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
-  login: boolean = true;
+  login: boolean = false;
   editMode: boolean = false;
 
   about: About = {
@@ -32,7 +32,9 @@ export class AboutComponent implements OnInit {
   }
 
   getLoginStatus() {
-    this.login = this.loginService.getLoginStatus();
+    this.loginService
+      .getLoginStatus()
+      .subscribe((login) => (this.login = login));
   }
 
   getAbout() {

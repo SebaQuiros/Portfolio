@@ -9,7 +9,12 @@ import { User } from '../interfaces/user';
   providedIn: 'root',
 })
 export class LoginService {
-  loginStatus: boolean = true;
+  currentUser: User = {
+    mailUser: '',
+    passwordUser: '',
+    // mailUser: 'sebaquiros@gmail.com',
+    // passwordUser: 'seba',
+  };
   private loginUrl = 'http://localhost:8080/login';
   private addUserUrl = 'http://localhost:8080/addUser';
 
@@ -21,12 +26,16 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  login(user: User): Observable<boolean> {
-    console.log(user);
-    return this.http.post<boolean>(this.loginUrl, user, this.httpOptions);
+  login(user: User) {
+    this.currentUser = user;
+    console.log(this.currentUser);
   }
 
-  getLoginStatus(): boolean {
-    return this.loginStatus;
+  getLoginStatus(): Observable<boolean> {
+    return this.http.post<boolean>(
+      this.loginUrl,
+      this.currentUser,
+      this.httpOptions
+    );
   }
 }

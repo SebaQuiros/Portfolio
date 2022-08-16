@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent implements OnInit {
-  login: boolean = true;
+  login: boolean = false;
   editMode: boolean = false;
 
   skills: SkillSet[] = [];
@@ -27,7 +27,9 @@ export class SkillsComponent implements OnInit {
   }
 
   getLoginStatus() {
-    this.login = this.loginService.getLoginStatus();
+    this.loginService
+      .getLoginStatus()
+      .subscribe((login) => (this.login = login));
   }
 
   getSkills() {

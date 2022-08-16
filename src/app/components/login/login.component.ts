@@ -17,13 +17,15 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.loginService.currentUser);
+  }
 
   onSubmit() {
     if (!this.user.mailUser.length || !this.user.passwordUser.length) {
       alert('Llenar los campos es obligatorio.');
       return;
     }
-    this.loginService.login(this.user).subscribe();
+    this.loginService.login(this.user);
   }
 }

@@ -15,7 +15,7 @@ import { LoginService } from 'src/app/services/login.service';
   ],
 })
 export class ProyectsComponent implements OnInit {
-  login: boolean = true;
+  login: boolean = false;
   editMode: boolean = false;
 
   proyects: Proyect[] = [];
@@ -32,7 +32,9 @@ export class ProyectsComponent implements OnInit {
   }
 
   getLoginStatus() {
-    this.login = this.loginService.getLoginStatus();
+    this.loginService
+      .getLoginStatus()
+      .subscribe((login) => (this.login = login));
   }
 
   getProyects() {

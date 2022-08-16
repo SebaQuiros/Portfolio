@@ -10,7 +10,7 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./education.component.scss'],
 })
 export class EducationComponent implements OnInit {
-  login: boolean = true;
+  login: boolean = false;
   editMode: boolean = false;
 
   educations: Education[] = [];
@@ -28,7 +28,9 @@ export class EducationComponent implements OnInit {
   }
 
   getLoginStatus() {
-    this.login = this.loginService.getLoginStatus();
+    this.loginService
+      .getLoginStatus()
+      .subscribe((login) => (this.login = login));
   }
 
   getEducations() {
