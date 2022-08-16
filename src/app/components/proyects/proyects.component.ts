@@ -8,7 +8,8 @@ import { LoginService } from 'src/app/services/login.service';
   selector: 'app-proyects',
   templateUrl: './proyects.component.html',
   styleUrls: [
-    './proyects.component.scss',
+    './proyects.component-content.scss',
+    './proyects.component-image.scss',
     './proyects.component-extra.scss',
     './proyects.component-edits.scss',
   ],
