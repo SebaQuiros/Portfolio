@@ -9,7 +9,8 @@ import { Education } from '../interfaces/education';
   providedIn: 'root',
 })
 export class EducationService {
-  private educationsUrl = 'http://localhost:8080/educations';
+  private educationsUrl =
+    'https://sebaquirosportfolio-backend.herokuapp.com/educations';
 
   httpOptions = {
     headers: new HttpHeaders({

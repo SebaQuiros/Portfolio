@@ -17,8 +17,10 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService) {}
 
-  ngOnInit(): void {
-    console.log(this.loginService.currentUser);
+  ngOnInit(): void {}
+
+  closeSession() {
+    localStorage.removeItem('currentUser');
   }
 
   onSubmit() {

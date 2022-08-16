@@ -9,7 +9,7 @@ import { About } from '../interfaces/about';
   providedIn: 'root',
 })
 export class AboutService {
-  private aboutUrl = 'http://localhost:8080/about';
+  private aboutUrl = 'https://sebaquirosportfolio-backend.herokuapp.com/about';
 
   httpOptions = {
     headers: new HttpHeaders({

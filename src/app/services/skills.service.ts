@@ -9,7 +9,8 @@ import { SkillSet } from '../interfaces/skill-set';
   providedIn: 'root',
 })
 export class SkillsService {
-  private skillsUrl = 'http://localhost:8080/skills';
+  private skillsUrl =
+    'https://sebaquirosportfolio-backend.herokuapp.com/skills';
 
   httpOptions = {
     headers: new HttpHeaders({

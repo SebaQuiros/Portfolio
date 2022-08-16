@@ -9,7 +9,8 @@ import { Proyect } from '../interfaces/proyect';
   providedIn: 'root',
 })
 export class ProyectsService {
-  private proyectsUrl = 'http://localhost:8080/projects';
+  private proyectsUrl =
+    'https://sebaquirosportfolio-backend.herokuapp.com/projects';
 
   httpOptions = {
     headers: new HttpHeaders({

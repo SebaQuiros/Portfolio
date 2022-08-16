@@ -10,13 +10,12 @@ import { User } from '../interfaces/user';
 })
 export class LoginService {
   currentUser: User = {
-    // mailUser: '',
-    // passwordUser: '',
-    mailUser: 'sebaquiros@gmail.com',
-    passwordUser: 'seba',
+    mailUser: '',
+    passwordUser: '',
   };
-  private loginUrl = 'http://localhost:8080/login';
-  private addUserUrl = 'http://localhost:8080/addUser';
+  private loginUrl = 'https://sebaquirosportfolio-backend.herokuapp.com/login';
+  private addUserUrl =
+    'https://sebaquirosportfolio-backend.herokuapp.com/addUser';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -28,13 +27,14 @@ export class LoginService {
 
   login(user: User) {
     this.currentUser = user;
+    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
     console.log(this.currentUser);
   }
 
   getLoginStatus(): Observable<boolean> {
     return this.http.post<boolean>(
       this.loginUrl,
-      this.currentUser,
+      localStorage.getItem('currentUser'),
       this.httpOptions
     );
   }
