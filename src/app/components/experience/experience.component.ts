@@ -53,9 +53,10 @@ export class ExperienceComponent implements OnInit {
       subtitle: '',
       duration: '',
     };
-    this.experienceService
-      .addExperience(newExperience)
-      .subscribe(() => this.getExperiences());
+    this.experienceService.addExperience(newExperience).subscribe(() => {
+      this.getExperiences();
+      console.log(this.experiences);
+    });
     this.selectedExperience = this.experiences[this.experiences.length - 1];
   }
   deleteExperience(experience: Experience) {
