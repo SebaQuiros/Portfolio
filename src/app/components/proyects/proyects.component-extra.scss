@@ -2,6 +2,9 @@
   .inner {
     .featured-proyects {
       .project {
+        &:not(:last-of-type) {
+          margin-bottom: 100px;
+        }
         .edition-controls {
           grid-column: 1/13;
           display: grid;

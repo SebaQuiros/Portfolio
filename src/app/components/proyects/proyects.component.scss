@@ -10,9 +10,6 @@
         gap: 10px;
         grid-template-columns: repeat(12, 1fr);
         align-items: center;
-        &:not(:last-of-type) {
-          margin-bottom: 100px;
-        }
         .project-content {
           position: relative;
           grid-area: 2 / 1 / 2 / 7;
