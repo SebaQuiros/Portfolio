@@ -36,7 +36,7 @@ export class ExperienceComponent implements OnInit {
   getExperiences() {
     this.experienceService.getExperiences().subscribe((experiences) => {
       this.experiences = experiences;
-      this.selectedExperience = experiences[experiences.length - 1];
+      this.selectedExperience = experiences[0];
     });
   }
   onSelect(experience: Experience): void {
@@ -57,7 +57,7 @@ export class ExperienceComponent implements OnInit {
       this.getExperiences();
       console.log(this.experiences);
     });
-    this.selectedExperience = this.experiences[this.experiences.length - 1];
+    this.selectedExperience = this.experiences[0];
   }
   deleteExperience(experience: Experience) {
     this.experienceService.deleteExperience(experience).subscribe(() => {
@@ -90,7 +90,7 @@ export class ExperienceComponent implements OnInit {
     this.experiences.forEach((experience) =>
       this.experienceService.saveChanges(experience).subscribe()
     );
-    this.selectedExperience = this.experiences[this.experiences.length - 1];
+    this.selectedExperience = this.experiences[0];
   }
   cancelChanges() {
     this.editMode = false;
