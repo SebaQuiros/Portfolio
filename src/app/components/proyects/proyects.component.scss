@@ -31,7 +31,6 @@
               padding-right: 150px;
               button {
                 margin-left: 10px;
-                margin-right: 0px;
               }
             }
           }
@@ -76,39 +75,6 @@
             li::before {
               position: relative;
               left: -5px;
-            }
-          }
-        }
-        .project-image {
-          box-shadow: var(--box-shadow-1);
-          transition: var(--transition-general);
-          grid-area: 2 / 6 / 2 / -1;
-          position: relative;
-          z-index: 1;
-          a {
-            width: 100%;
-            height: 100%;
-            border-radius: var(--border-radius-sm);
-            vertical-align: middle;
-            .img-wrapper {
-              border-radius: var(--border-radius-sm);
-              width: 100%;
-              max-width: 100%;
-              vertical-align: middle;
-              display: inline-block;
-              position: relative;
-              overflow: hidden;
-              img {
-                border-radius: var(--border-radius-sm);
-                max-width: 100%;
-                display: block;
-                position: static;
-                transition: var(--transition-general);
-                filter: grayscale(100%);
-                &:hover {
-                  filter: grayscale(0%);
-                }
-              }
             }
           }
         }

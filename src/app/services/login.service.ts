@@ -9,7 +9,7 @@ import { User } from '../interfaces/user';
   providedIn: 'root',
 })
 export class LoginService {
-  loginStatus: boolean = false;
+  loginStatus: boolean = true;
   private loginUrl = 'http://localhost:8080/login';
   private addUserUrl = 'http://localhost:8080/addUser';
 
