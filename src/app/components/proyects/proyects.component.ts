@@ -7,7 +7,11 @@ import { LoginService } from 'src/app/services/login.service';
 @Component({
   selector: 'app-proyects',
   templateUrl: './proyects.component.html',
-  styleUrls: ['./proyects.component.scss', './proyects.component-extra.scss'],
+  styleUrls: [
+    './proyects.component.scss',
+    './proyects.component-extra.scss',
+    './proyects.component-edits.scss',
+  ],
 })
 export class ProyectsComponent implements OnInit {
   login: boolean = true;
