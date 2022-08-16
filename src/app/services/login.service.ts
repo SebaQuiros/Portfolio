@@ -34,7 +34,7 @@ export class LoginService {
   getLoginStatus(): Observable<boolean> {
     return this.http.post<boolean>(
       this.loginUrl,
-      localStorage.getItem('currentUser'),
+      JSON.parse(localStorage.getItem('currentUser') || '{}'),
       this.httpOptions
     );
   }
