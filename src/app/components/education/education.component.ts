@@ -36,7 +36,7 @@ export class EducationComponent implements OnInit {
   getEducations() {
     this.educationService.getEducations().subscribe((educations) => {
       this.educations = educations;
-      this.selectedEducation = educations[educations.length - 1];
+      this.selectedEducation = educations[0];
     });
   }
   onSelect(education: Education): void {
@@ -56,7 +56,7 @@ export class EducationComponent implements OnInit {
     this.educationService
       .addEducation(newEducation)
       .subscribe(() => this.getEducations());
-    this.selectedEducation = this.educations[this.educations.length - 1];
+    this.selectedEducation = this.educations[0];
   }
   deleteEducation(education: Education) {
     this.educationService.deleteEducation(education).subscribe(() => {
@@ -88,7 +88,7 @@ export class EducationComponent implements OnInit {
     this.educations.forEach((education) =>
       this.educationService.saveChanges(education).subscribe()
     );
-    this.selectedEducation = this.educations[this.educations.length - 1];
+    this.selectedEducation = this.educations[0];
   }
   cancelChanges() {
     this.editMode = false;
