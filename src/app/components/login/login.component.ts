@@ -10,6 +10,8 @@ import { User } from 'src/app/interfaces/user';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  login: boolean = false;
+
   user: User = {
     mailUser: '',
     passwordUser: '',
@@ -17,10 +19,19 @@ export class LoginComponent implements OnInit {
 
   constructor(private loginService: LoginService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getLoginStatus();
+  }
+
+  getLoginStatus() {
+    this.loginService
+      .getLoginStatus()
+      .subscribe((login) => (this.login = login));
+  }
 
   closeSession() {
     localStorage.removeItem('currentUser');
+    this.getLoginStatus();
   }
 
   onSubmit() {
@@ -29,5 +40,10 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.loginService.login(this.user);
+    this.user = {
+      mailUser: '',
+      passwordUser: '',
+    };
+    this.getLoginStatus();
   }
 }

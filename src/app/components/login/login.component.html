@@ -1,9 +1,22 @@
-<div class="login-form">
+<div class="login-form" *ngIf="!login">
   <div class="login-description">
     <h1>Modo edición</h1>
+    <p></p>
     <p>
-      Para acceder al modo edición del portfolio es necesario iniciar sesión. Se
-      puede iniciar una sesión de prueba.
+      Este sitio web de portfolio personal cuenta con capacidades de edición.
+      Esta característica formó parte de los requerimientos del curso de
+      <a
+        class="in-text"
+        href="https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa"
+        target="_blank"
+        >Argentina Programa</a
+      >. La edición permite crear, modificar y eliminar información de la base
+      de datos.
+    </p>
+    <p>
+      Para acceder al modo de edición es necesario iniciar sesión.
+      Alternativamente se puede acceder al modo de prueba, sin acceso a la base
+      de datos.
     </p>
   </div>
   <form action="login" (ngSubmit)="onSubmit()">
@@ -23,5 +36,7 @@
     />
     <input type="submit" value="Iniciar sesión" class="btn btn-regular" />
   </form>
+</div>
+<div class="logged-panel" *ngIf="login">
   <button class="btn-regular" (click)="closeSession()">Cerrar sesión</button>
 </div>

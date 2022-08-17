@@ -28,7 +28,6 @@ export class LoginService {
   login(user: User) {
     this.currentUser = user;
     localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
-    console.log(this.currentUser);
   }
 
   getLoginStatus(): Observable<boolean> {
