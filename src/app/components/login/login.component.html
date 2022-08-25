@@ -1,7 +1,6 @@
 <div class="login-form" *ngIf="!login">
   <div class="login-description">
     <h1>Modo edición</h1>
-    <p></p>
     <p>
       Este sitio web de portfolio personal cuenta con capacidades de edición.
       Esta característica formó parte de los requerimientos del curso de
@@ -15,8 +14,9 @@
     </p>
     <p>
       Para acceder al modo de edición es necesario iniciar sesión.
-      Alternativamente se puede acceder al modo de prueba, sin acceso a la base
-      de datos.
+      Alternativamente puedes
+      <a class="in-text" routerLink="/main">regresar</a> al portfolio y
+      continuar navegando.
     </p>
   </div>
   <form action="login" (ngSubmit)="onSubmit()">
@@ -38,5 +38,12 @@
   </form>
 </div>
 <div class="logged-panel" *ngIf="login">
+  <h1>Modo edición</h1>
+  <p>Sesión iniciada correctamente.</p>
+  <p>
+    Puedes
+    <a class="in-text" routerLink="/main">regresar</a>
+    al portfolio donde encontrarás en cada sección los botones de edición.
+  </p>
   <button class="btn-regular" (click)="closeSession()">Cerrar sesión</button>
 </div>
