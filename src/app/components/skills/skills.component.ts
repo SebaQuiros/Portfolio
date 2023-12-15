@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { SkillSet } from 'src/app/interfaces/skill-set';
+import { SKILLS } from 'src/app/data/skill-data';
 import { SkillsService } from 'src/app/services/skills.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -13,7 +14,7 @@ export class SkillsComponent implements OnInit {
   login: boolean = false;
   editMode: boolean = false;
 
-  skills: SkillSet[] = [];
+  skills: SkillSet[] = SKILLS;
   newTool: string = '';
 
   constructor(

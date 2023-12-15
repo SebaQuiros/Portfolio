@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Experience } from 'src/app/interfaces/experience';
+import { EXPERIENCES } from 'src/app/data/experience-data';
 import { ExperienceService } from 'src/app/services/experience.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -13,8 +14,8 @@ export class ExperienceComponent implements OnInit {
   login: boolean = false;
   editMode: boolean = false;
 
-  experiences: Experience[] = [];
-  selectedExperience?: Experience;
+  experiences: Experience[] = EXPERIENCES;
+  selectedExperience: Experience = this.experiences[0];
   newParagraph: string = '';
 
   constructor(

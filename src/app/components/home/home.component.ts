@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { About } from 'src/app/interfaces/about';
+import { ABOUT } from 'src/app/data/about-data';
 import { AboutService } from 'src/app/services/about.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -13,15 +14,9 @@ export class HomeComponent implements OnInit {
   login: boolean = false;
   editMode: boolean = false;
 
-  about: About = {
-    fullName: '',
-    occupation: '',
-    mail: '',
-    img: '',
-    imgAlt: '',
-  };
+  about: About = ABOUT;
 
-  emailstring: string = `mailto:${this.about.mail}?Subject=Portfolio`;
+  emailstring: string = `mailto:${this.about.mail}?Subject=Hola,%20vi%20tu%20portfolio%20online`;
 
   constructor(
     private aboutService: AboutService,
@@ -40,10 +35,10 @@ export class HomeComponent implements OnInit {
   }
 
   getAbout() {
-    this.aboutService.getAbout().subscribe((about) => {
-      this.about = about[0];
-      this.emailstring = `mailto:${this.about.mail}?Subject=Portfolio`;
-    });
+    // this.aboutService.getAbout().subscribe((about) => {
+    //   this.about = about[0];
+    //   this.emailstring = `mailto:${this.about.mail}?Subject=Portfolio`;
+    // });
   }
 
   // Menú de cambios.

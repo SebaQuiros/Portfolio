@@ -1,0 +1,87 @@
+import { Experience } from '../interfaces/experience';
+
+export const EXPERIENCES: Experience[] = [
+  {
+    id: 6,
+    button: 'IVC',
+    occupation: 'Técnico Senior de Regularización Dominial',
+    title: 'IVC',
+    link: 'https://vivienda.buenosaires.gob.ar/#top',
+    subtitle: 'Instituto de Vivienda de la Ciudad',
+    duration: 'mar. 2023 - act.',
+    description: [
+      'Regularización Dominial es el área del Instituto de Vivienda de la Ciudad dedicada a regularizar la propiedad de la tierra en las villas de la ciudad.',
+      'Como parte del equipo territorial realizo una gran diversidad de tareas y colaboro con muchas otras áreas de proyecto.',
+    ],
+  },
+  {
+    id: 5,
+    button: 'M.H.N.',
+    occupation: 'Técnico en el',
+    title: 'Museo Histórico Nacional',
+    link: 'https://museohistoriconacional.cultura.gob.ar/',
+    subtitle: 'Ministerio de cultura',
+    duration: 'ago. - dic. 2022',
+    description: [
+      'Formé parte del equipo de museografía colaborando en la muestra “Pasión de Multitudes".',
+      'Documentación técnica para la fabricación de dispositivos de exposición.',
+      'Control de producción y montaje.',
+    ],
+  },
+  {
+    id: 4,
+    button: 'Fundación IDA',
+    occupation: 'Voluntario en la',
+    title: 'Fundación IDA',
+    link: 'https://www.fundacionida.org/',
+    subtitle: 'Investigación en Diseño Argentino',
+    duration: 'mar. 2021 - abr. 2022',
+    description: [
+      'Comencé trabajando con el ingreso de material del archivo del arq. Juan Kurchan (Grupo Austral).',
+      'Encargado del área de arquitectura para la obtención, recepción y catalogación de material nuevo.',
+      'Investigador para el proyecto "Épica: Hazañas del diseño argentino."',
+    ],
+  },
+  {
+    id: 3,
+    button: 'Dimension',
+    occupation: 'Diseñador en',
+    title: 'Dimension',
+    link: 'https://www.instagram.com/dimension.arg/',
+    subtitle: 'Fábrica de impresión 3D',
+    duration: 'ene. - abr. 2021',
+    description: [
+      'Trabajo con tecnología de impresión 3D.',
+      'Responsable del proceso de lanzamiento de nuevos productos. Diseño, pruebas y cotización.',
+      'Producción y mantenimiento en el día a día.',
+    ],
+  },
+  {
+    id: 2,
+    button: 'BruTo',
+    occupation: 'Dibujante en',
+    title: 'BruTo Estudio',
+    link: 'https://www.instagram.com/bruto.arquitectos/',
+    subtitle: 'Estudio de Arquitectura',
+    duration: 'abr. 2018 - ago. 2019',
+    description: [
+      'Documentación de todas las etapas de proyecto: de cumplimiento reglamentario, de licitación y cotización de obra y ejecutiva para obra.',
+      'Trabajo en estudio con documentación, modelado virtual y renderizado.',
+      'Visitas a obra como parte de la dirección para el control de tareas.',
+    ],
+  },
+  {
+    id: 1,
+    button: 'All Access',
+    occupation: 'Empleado en',
+    title: 'All Access',
+    link: 'https://www.allaccess.com.ar/',
+    subtitle: 'Empresa de eventos y festivales',
+    duration: 'ene. - abr. 2018',
+    description: [
+      'Venta de entradas para el Loollapalooza.',
+      'Atención al público, en especial a turistas comunicándose en inglés.',
+      'Soporte en línea post evento, reclamos y reembolsos.',
+    ],
+  },
+];

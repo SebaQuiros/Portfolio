@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Proyect } from 'src/app/interfaces/proyect';
+import { PROYECTS } from 'src/app/data/proyect-data';
 import { ProyectsService } from 'src/app/services/proyects.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -18,7 +19,7 @@ export class ProyectsComponent implements OnInit {
   login: boolean = false;
   editMode: boolean = false;
 
-  proyects: Proyect[] = [];
+  proyects: Proyect[] = PROYECTS;
   newTool: string = '';
 
   constructor(

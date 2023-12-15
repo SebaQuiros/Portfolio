@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { About } from 'src/app/interfaces/about';
+import { ABOUT } from 'src/app/data/about-data';
 import { AboutService } from 'src/app/services/about.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -13,13 +14,7 @@ export class AboutComponent implements OnInit {
   login: boolean = false;
   editMode: boolean = false;
 
-  about: About = {
-    fullName: '',
-    occupation: '',
-    mail: '',
-    img: '',
-    imgAlt: '',
-  };
+  about: About = ABOUT;
 
   constructor(
     private aboutService: AboutService,

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Education } from 'src/app/interfaces/education';
+import { EDUCATIONS } from 'src/app/data/education-data';
 import { EducationService } from 'src/app/services/education.service';
 import { LoginService } from 'src/app/services/login.service';
 
@@ -13,8 +14,8 @@ export class EducationComponent implements OnInit {
   login: boolean = false;
   editMode: boolean = false;
 
-  educations: Education[] = [];
-  selectedEducation?: Education;
+  educations: Education[] = EDUCATIONS;
+  selectedEducation: Education = this.educations[0];
   newParagraph: string = '';
 
   constructor(

@@ -30,11 +30,8 @@
     />
   </div> -->
   <span class="home-intro">Hola, mi nombre es</span>
-  <h1>Sebastián Quirós</h1>
-  <span class="home-subtitle">Diseño y programo</span>
-  <!-- Datos paramétricos -->
-  <!-- <h1>{{ about.fullName }}</h1>
-  <span class="home-subtitle">{{ about.occupation }}</span> -->
+  <h1>{{ about.fullName }}</h1>
+  <span class="home-subtitle">{{ about.occupation }}</span>
   <p>
     Amo aprender y mi pasión es crear. Uno de mis intereses es la impresión 3D y
     tengo un emprendimiento llamado
@@ -43,13 +40,7 @@
     >. Actualmente busco trabajo en el mundo de la programación y el desarrollo
     web.
   </p>
-  <a
-    href="mailto: sebaquiros@gmail.com?Subject=Hola,%20vi%20tu%20portfolio%20online"
-    target="_blank"
+  <a [href]="emailstring" target="_blank"
     ><button class="btn-regular">¿Hablamos?</button></a
   >
-  <!-- Botón con mail paramétrico -->
-  <!-- <a [href]="emailstring" target="_blank"
-    ><button class="btn-regular">¿Hablamos?</button></a
-  > -->
 </section>
