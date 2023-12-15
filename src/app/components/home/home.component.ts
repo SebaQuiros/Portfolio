@@ -35,10 +35,10 @@ export class HomeComponent implements OnInit {
   }
 
   getAbout() {
-    // this.aboutService.getAbout().subscribe((about) => {
-    //   this.about = about[0];
-    //   this.emailstring = `mailto:${this.about.mail}?Subject=Portfolio`;
-    // });
+    this.aboutService.getAbout().subscribe((about) => {
+      this.about = about[0];
+      this.emailstring = `mailto:${this.about.mail}?Subject=Portfolio`;
+    });
   }
 
   // Menú de cambios.
