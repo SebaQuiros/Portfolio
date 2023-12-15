@@ -14,8 +14,8 @@ export class HomeComponent implements OnInit {
   editMode: boolean = false;
 
   about: About = {
-    fullName: 'Sebastián Quirós',
-    occupation: 'Diseño y programo',
+    fullName: '',
+    occupation: '',
     mail: '',
     img: '',
     imgAlt: '',
