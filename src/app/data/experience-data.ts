@@ -4,7 +4,7 @@ export const EXPERIENCES: Experience[] = [
   {
     id: 6,
     button: 'IVC',
-    occupation: 'Técnico Senior de Regularización Dominial',
+    occupation: 'Técnico Senior de Regularización Dominial en el',
     title: 'IVC',
     link: 'https://vivienda.buenosaires.gob.ar/#top',
     subtitle: 'Instituto de Vivienda de la Ciudad',
