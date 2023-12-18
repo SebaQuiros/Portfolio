@@ -29,9 +29,8 @@ export class EducationComponent implements OnInit {
   }
 
   getLoginStatus() {
-    this.loginService
-      .getLoginStatus()
-      .subscribe((login) => (this.login = login));
+    this.loginService.getLoginStatus();
+    // .subscribe((login) => (this.login = login));
   }
 
   getEducations() {

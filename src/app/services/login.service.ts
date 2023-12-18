@@ -9,13 +9,12 @@ import { User } from '../interfaces/user';
   providedIn: 'root',
 })
 export class LoginService {
-  currentUser: User = {
-    mailUser: '',
-    passwordUser: '',
-  };
-  private loginUrl = 'https://sebaquirosportfolio-backend.herokuapp.com/login';
-  private addUserUrl =
-    'https://sebaquirosportfolio-backend.herokuapp.com/addUser';
+  // currentUser: User = {
+  //   mailUser: 'Usuario',
+  //   passwordUser: 'Prueba',
+  // };
+  // private loginUrl = 'https://sebaquirosportfolio.web.app/login';
+  // private addUserUrl = 'https://sebaquirosportfolio.web.app/addUser';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -25,16 +24,18 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  login(user: User) {
-    this.currentUser = user;
-    localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
-  }
+  // login(user: User) {
+  //   this.currentUser = user;
+  //   localStorage.setItem('currentUser', JSON.stringify(this.currentUser));
+  // }
 
-  getLoginStatus(): Observable<boolean> {
-    return this.http.post<boolean>(
-      this.loginUrl,
-      JSON.parse(localStorage.getItem('currentUser') || '{}'),
-      this.httpOptions
-    );
-  }
+  getLoginStatus() {}
+
+  // getLoginStatus(): Observable<boolean> {
+  //   return this.http.post<boolean>(
+  //     this.loginUrl,
+  //     JSON.parse(localStorage.getItem('currentUser') || '{}'),
+  //     this.httpOptions
+  //   );
+  // }
 }

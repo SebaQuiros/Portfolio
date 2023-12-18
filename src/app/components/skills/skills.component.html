@@ -2,14 +2,14 @@
   <header class="section-header">
     <app-section-title number="04." text="Habilidades"></app-section-title>
     <!-- Modo dición -->
-    <!-- <app-edit-menu
+    <app-edit-menu
       [addOption]="true"
       (addFunction)="addSkillset()"
       *ngIf="login"
       (editStart)="editStart()"
       (saveChanges)="saveChanges()"
       (cancelChanges)="cancelChanges()"
-    ></app-edit-menu> -->
+    ></app-edit-menu>
   </header>
   <div class="inner">
     <div class="skill-set" *ngFor="let skillSet of skills">

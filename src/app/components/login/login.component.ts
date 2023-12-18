@@ -24,26 +24,27 @@ export class LoginComponent implements OnInit {
   }
 
   getLoginStatus() {
-    this.loginService
-      .getLoginStatus()
-      .subscribe((login) => (this.login = login));
+    this.loginService.getLoginStatus();
+    // .subscribe((login) => (this.login = login));
   }
 
   closeSession() {
-    localStorage.removeItem('currentUser');
-    this.getLoginStatus();
+    this.login = false;
+    // localStorage.removeItem('currentUser');
+    // this.getLoginStatus();
   }
 
   onSubmit() {
-    if (!this.user.mailUser.length || !this.user.passwordUser.length) {
-      alert('Llenar los campos es obligatorio.');
-      return;
-    }
-    this.loginService.login(this.user);
-    this.user = {
-      mailUser: '',
-      passwordUser: '',
-    };
-    this.getLoginStatus();
+    this.login = true;
+    // if (!this.user.mailUser.length || !this.user.passwordUser.length) {
+    //   alert('Llenar los campos es obligatorio.');
+    //   return;
+    // }
+    // this.loginService.login(this.user);
+    // this.user = {
+    //   mailUser: '',
+    //   passwordUser: '',
+    // };
+    // this.getLoginStatus();
   }
 }

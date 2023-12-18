@@ -1,12 +1,12 @@
 <section id="sec-00-home">
   <!-- Modo dición -->
-  <!-- <app-edit-menu
+  <app-edit-menu
     *ngIf="login"
     (editStart)="editStart()"
     (saveChanges)="saveChanges()"
     (cancelChanges)="cancelChanges()"
-  ></app-edit-menu> -->
-  <!-- <div class="edit-controls" *ngIf="editMode">
+  ></app-edit-menu>
+  <div class="edit-controls" *ngIf="editMode">
     <input
       [(ngModel)]="about.fullName"
       id="fullName"
@@ -28,7 +28,7 @@
       name="mail"
       placeholder="Correo electrónico"
     />
-  </div> -->
+  </div>
   <span class="home-intro">Hola, mi nombre es</span>
   <h1>{{ about.fullName }}</h1>
   <span class="home-subtitle">{{ about.occupation }}</span>
