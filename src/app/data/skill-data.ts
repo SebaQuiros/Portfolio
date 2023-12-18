@@ -29,7 +29,7 @@ export const SKILLS: SkillSet[] = [
     type: 'Laborales',
     title: 'Trabajo y toma de decisiones',
     description:
-      'Mis experiencias laborales en distintos ámbitos y la participación en numerosos proyectos académicos me han permitido desarrollar muchas habilidades de trabajo. Descubrí que tengo una tendencia al liderazgo y disfruto del trabajo en equipo comprometido y participativo.',
+      'Mis experiencias laborales en distintos ámbitos y la participación en numerosos proyectos académicos me han permitido desarrollar muchas habilidades de trabajo. Disfruto del trabajo en equipo comprometido y participativo.',
     tools: ['Liderazgo', 'Iniciativa', 'Compromiso'],
   },
 ];
